@@ -2,7 +2,7 @@ Dine With DineX
 ================================
 Term Project for Designing Human Centered Software
 
-Node.js, MongoDB, Facebook Graph API, Foursquare API, Venmo API  
+Node.js, MongoDB, Facebook Graph API, Foursquare API, Venmo API, Foundation, jQuery  
 
 ================================
 Overview: An application that will allow students to exchange their blocks & DineX for real money 
@@ -26,3 +26,15 @@ Running the Node server on your local machine:
 3. Open web browser to -> localhost:3333 (or a different port if specified)
 
 ================================
+References: 
+
+Foudnation Responsive Framework: 
+http://foundation.zurb.com/learn/features.html
+
+Node:
+Express - http://expressjs.com/guide.html
+
+MongoDB:
+http://try.mongodb.org/
+
+
