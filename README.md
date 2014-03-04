@@ -5,7 +5,7 @@ Term Project for Designing Human Centered Software
 Node.js, MongoDB, Facebook Graph API, Foursquare API, Venmo API  
 
 ================================
-Overview: An application that will allow students to exchange their blocks for real money 
+Overview: An application that will allow students to exchange their blocks & DineX for real money 
 
 ================================
 Installing Node:
