@@ -22,8 +22,9 @@ https://github.com/remy/nodemon
 Running the Node server on your local machine: 
 
 1. Go to node application directory -> i.e. usr/Documents/webapps/dinewithdinex
-2. Type in terminal -> nodemon app 
-3. Open web browser to -> localhost:3333 (or a different port if specified)
+2. Type in terminal -> npm install 
+3. Type in terminal -> nodemon app 
+4. Open web browser to -> localhost:3333 (or a different port if specified)
 
 ================================
 References: 
