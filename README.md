@@ -1,4 +1,4 @@
-Dine With Dinex
+Dine With DineX
 ================================
 Term Project for Designing Human Centered Software
 
@@ -9,7 +9,11 @@ Overview: An application that will allow students to exchange their blocks & Din
 
 ================================
 Installing Node:
-http://howtonode.org/how-to-install-nodejs
+- If on Mac 
+http://thechangelog.com/install-node-js-with-homebrew-on-os-x/
+
+- Other
+http://nodejs.org/download/
 
 Installing Nodemon (Automatically updates Node so you don't have to restart the server on every file change):
 https://github.com/remy/nodemon
