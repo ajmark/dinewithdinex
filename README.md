@@ -1,4 +1,4 @@
-dinewithdinex
+Dine With Dinex
 ================================
 Term Project for Designing Human Centered Software
 
