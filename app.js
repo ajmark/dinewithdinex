@@ -14,7 +14,7 @@ var express = require('express')
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3333);
+  app.set('port', process.env.PORT || 3333); // Sets the port number
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -33,9 +33,11 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// Specifies Routes
 app.get('/', routes.splash);
 app.post( '/create', routes.create );
 
+// Specifies address on localhost
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

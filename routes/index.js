@@ -1,6 +1,8 @@
 var mongoose = require( 'mongoose' );
+//Imports the models
 var Offer = mongoose.model( 'Offer' );
 
+//Controller Actions
 exports.splash = function ( req, res ){
   Offer.find( function ( err, offers, count ){
     res.render( '../views/index.jade', {
