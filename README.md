@@ -2,7 +2,7 @@ Dine With DineX
 ================================
 Term Project for Designing Human Centered Software
 
-Node.js, MongoDB, Facebook Graph API, Foursquare API, Venmo API, Foundation, jQuery  
+Node.js, MongoDB, Facebook Graph API, Foursquare API, Venmo API, Foundation, jQuery, Jade  
 
 ================================
 Overview: An application that will allow students to exchange their blocks & DineX for real money 
@@ -19,12 +19,25 @@ Installing Nodemon (Automatically updates Node so you don't have to restart the 
 https://github.com/remy/nodemon
 
 ================================
-Running the Node server on your local machine: 
+MongoDB
+
+- Install:
+http://docs.mongodb.org/manual/installation/
+
+- Getting Started:
+http://docs.mongodb.org/manual/tutorial/getting-started-with-the-mongo-shell/
+
+* To access mongo shell, type mongo into terminal
+* Shell commands found in link under Getting Started
+
+================================
+Running the application on your local machine: 
 
 1. Go to node application directory -> i.e. usr/Documents/webapps/dinewithdinex
-2. Type in terminal -> npm install 
-3. Type in terminal -> nodemon app 
-4. Open web browser to -> localhost:3333 (or a different port if specified)
+2. Type in terminal -> npm install
+3. Type in terminal -> mongod (starts mongodb, may be different for Windows and Linux/Ubuntu) 
+4. Type in terminal -> nodemon app 
+5. Open web browser to -> localhost:3333 (or a different port if specified)
 
 ================================
 References: 
@@ -37,5 +50,8 @@ Express - http://expressjs.com/guide.html
 
 MongoDB:
 http://try.mongodb.org/
+
+Jade:
+http://jade-lang.com/
 
 
