@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  div.addOfferForm
+        form( method="post", action="/create")
+            div
+                div
+                    span.label Name :
+                    input(type="text", class="nameTxt", name="username")
+                div
+                    span.label Offer :
+                    textarea(name="offer")
+                div#addOfferSubmit
+                    input(type="submit", value="Save")
+  br
+  br
+  #offers
+    - each offer in offers
+      div.offer
+        div.name= offer.username
+        div.created_at= offer.created
+        br
+        div.content= offer.content 
+        hr
+  
