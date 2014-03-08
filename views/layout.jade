@@ -5,7 +5,7 @@ html
   head
     title= 'Dine With DineX'
     //- Stylesheets
-    link(rel='stylesheet', href='/css/foundation.min.css')
+    link(rel='stylesheet', href='/css/foundation.css')
     link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/css/normalize.css')
     //- Javascript
@@ -13,5 +13,9 @@ html
     script(type='text/javascript' src="/js/jquery.js")
     script(type='text/javascript' src="/js/main.js")
   body
+    nav.tab-bar.show-for-small
+        block navbar-s
+    nav.top-bar.hide-for-small
+        block navbar-lrg
     div.content
         block content
