@@ -10,6 +10,12 @@ exports.splash = function (req, res){
   });
 };
 
+exports.create_form = function (req, res){
+  res.render("../views/create_form.jade",{
+    title:"New Offer"
+  });
+};
+
 exports.create = function ( req, res ){
   new Offer({
     username : req.body.username,
@@ -23,7 +29,7 @@ exports.create = function ( req, res ){
 exports.newsfeed = function ( req, res ){
   Offer.find( function ( err, offers, count ){
     res.render( '../views/newsfeed.jade', {
-        title : 'Dine With DineX',
+        title : 'Offer Newsfeed',
         offers : offers
     });
   });
