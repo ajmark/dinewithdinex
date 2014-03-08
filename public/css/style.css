@@ -9,5 +9,27 @@
 }
 
 body {
-	
+}
+
+.content {
+	padding: 0 10%;
+}
+
+/***************************
+** Splash Page **
+****************************/
+
+.logo-lrg {
+	width:70%;
+	display: block;
+	margin:0 auto;
+}
+
+.fb_login {
+	padding-top:30px;
+	margin:0 auto;
+	display:block;
+}
+
+.fb_login:hover {
 }

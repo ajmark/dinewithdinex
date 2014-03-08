@@ -35,6 +35,7 @@ app.configure('development', function(){
 
 // Specifies Routes
 app.get('/', routes.splash);
+app.get('/newsfeed',routes.newsfeed);
 app.post( '/create', routes.create );
 
 // Specifies address on localhost
