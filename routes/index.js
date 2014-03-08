@@ -2,7 +2,7 @@ var mongoose = require( 'mongoose' );
 //Imports the models
 var Offer = mongoose.model( 'Offer' );
 
-//Controller Actions
+//URL Routes
 
 exports.splash = function (req, res){
   res.render("../views/index.jade",{
@@ -16,6 +16,10 @@ exports.create_form = function (req, res){
   });
 };
 
+
+//Offer CRUD
+
+//Create
 exports.create = function ( req, res ){
   new Offer({
     username : req.body.username,
@@ -26,6 +30,7 @@ exports.create = function ( req, res ){
   });
 };
 
+//Read
 exports.newsfeed = function ( req, res ){
   Offer.find( function ( err, offers, count ){
     res.render( '../views/newsfeed.jade', {
@@ -34,3 +39,7 @@ exports.newsfeed = function ( req, res ){
     });
   });
 }; 
+
+//Update
+
+//Destroy
