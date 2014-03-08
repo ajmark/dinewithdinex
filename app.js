@@ -26,8 +26,23 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
-//connect to mongoose db
-mongoose.connect( 'mongodb://localhost/dinex_db' );
+// Here we find an appropriate database to connect to, defaulting to
+// localhost if we don't find one.
+var uristring =
+process.env.MONGOLAB_URI ||
+'mongodb://heroku_app22855319:fo5rk0qdt48o1m9ng9ktdespsk@ds033559.mongolab.com:33559/heroku_app22855319'
+process.env.MONGOHQ_URL ||
+'mongodb://localhost/dinex_db';
+
+// Makes connection asynchronously.  Mongoose will queue up database
+// operations and release them when the connection is complete.
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+  console.log ('Succeeded connected to: ' + uristring);
+  }
+});
 
 app.configure('development', function(){
   app.use(express.errorHandler());
