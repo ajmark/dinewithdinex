@@ -12,7 +12,7 @@ exports.splash = function (req, res){
 
 exports.create_form = function (req, res){
   res.render("../views/create_form.jade",{
-    title:"New Offer"
+    title:"Make a New Offer"
   });
 };
 
@@ -29,7 +29,7 @@ exports.create = function ( req, res ){
 exports.newsfeed = function ( req, res ){
   Offer.find( function ( err, offers, count ){
     res.render( '../views/newsfeed.jade', {
-        title : 'Offer Newsfeed',
+        title : 'Offers Newsfeed',
         offers : offers
     });
   });
