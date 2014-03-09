@@ -9,13 +9,17 @@ html
     link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/css/normalize.css')
     //- Javascript
-    script(type='text/javascript' src="/js/foundation.min.js")
     script(type='text/javascript' src="/js/jquery.js")
+    script(type='text/javascript' src="/js/foundation.min.js")
     script(type='text/javascript' src="/js/main.js")
   body
-    nav.tab-bar.show-for-small
-        block navbar-s
-    nav.top-bar.hide-for-small
-        block navbar-lrg
+    nav.top-bar.fixed(data-topbar)
+        ul.title-area
+            li.name
+                h1: a(href="#")="Dine With DineX"
+            li.toggle-topbar.menu-icon
+                a(href="#")="Menu"
+        section.top-bar-section
+            ul.right
     div.content
         block content
