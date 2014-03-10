@@ -4,6 +4,10 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
+/***************************
+** Page Layout **
+****************************/
+
 * {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -15,8 +19,12 @@ body {
 	padding: 60px 10%;
 }
 
-.f-topbar-fixed{
+.f-topbar-fixed {
 	padding-top: 0px !important;
+}
+
+.page-title {
+	text-align: center;
 }
 
 /***************************
