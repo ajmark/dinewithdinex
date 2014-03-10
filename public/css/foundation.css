@@ -1038,7 +1038,7 @@ meta.foundation-mq-topbar {
       color: white;
       text-transform: uppercase;
       font-size: 0.8125rem;
-      font-weight: bold;
+      /*font-weight: bold;*/
       position: relative;
       display: block;
       padding: 0 15px;
@@ -1254,7 +1254,7 @@ meta.foundation-mq-topbar {
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #333333; }
+      background: #464646; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background: #272727; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {

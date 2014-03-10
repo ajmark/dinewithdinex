@@ -11,7 +11,14 @@ html
     //- Javascript
     script(type='text/javascript' src="/js/jquery.js")
     script(type='text/javascript' src="/js/foundation.min.js")
+    script(type='text/javascript' src="/js/foundation.dropdown.js")    
+    script(type='text/javascript' src="/js/foundation.topbar.js")
     script(type='text/javascript' src="/js/main.js")
+
+    script(type='text/javascript').
+        $(function(){
+            $(document).foundation();    
+        });
   body
     nav.top-bar.fixed(data-topbar)
         ul.title-area
@@ -24,5 +31,9 @@ html
                 li.nav-button: a(href="#")="Dashboard"
                 li.nav-button: a(href="/newsfeed")="Newsfeed"
                 li.nav-button: a(href="#")="Create New Offer"
+
+
     div.content
         block content
+    div.footer
+        block footer
