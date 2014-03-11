@@ -19,10 +19,6 @@ body {
 	padding: 60px 10%;
 }
 
-.f-topbar-fixed {
-	padding-top: 0px !important;
-}
-
 .page-title {
 	text-align: center;
 }
@@ -42,3 +38,43 @@ body {
 	margin:0 auto;
 	display:block;
 }
+
+/***************************
+** Form Page **
+****************************/
+
+form {
+	padding-top:30px;
+	line-height: 3em;
+	padding-right:30px;
+}
+
+.row-title {
+	font-size:18px;
+}
+
+input {
+	text-align: center;
+}
+
+/*For Webkit browsers (Chrome, Safari) */
+input::-webkit-input-placeholder {
+   /* Your style here e.g. font size, color etc */
+   font-size:12px;
+}
+
+/* For Mozilla Firefox */
+input:-moz-placeholder {
+    /* Your style here e.g. font size, color etc */
+    font-size:14px;
+}
+
+input[type="location"], input[type="expiration"], input[type="textfield"]{
+	width:100%;
+}
+
+.radio-select {
+	text-align: center;
+}
+
+

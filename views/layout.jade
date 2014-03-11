@@ -14,6 +14,7 @@ html
     script(type='text/javascript' src="/js/foundation.dropdown.js")    
     script(type='text/javascript' src="/js/foundation.topbar.js")
     script(type='text/javascript' src="/js/main.js")
+    script(type='text/javascript' src="/js/jquery.formatCurrency-1.4.0.min.js")
 
     <meta name="viewport" content="width=device-width" />
 
@@ -21,20 +22,26 @@ html
         $(function(){
             $(document).foundation();    
         });
+        $(document).ready(function(){
+            $('.currency').blur(function() {
+                $('.currency').formatCurrency();
+            });
+        });
   body
     //- Navbar
-    nav.top-bar.fixed(data-topbar)
-        ul.title-area
-            li.name
-                h1
-                    a(href="/") Dine With DineX
-            li.toggle-topbar.menu-icon
-                a(href="#")="Menu"
-        section.top-bar-section
-            ul.right
-                li.nav-button: a(href="#")="Dashboard"
-                li.nav-button: a(href="/newsfeed")="Newsfeed"
-                li.nav-button: a(href="/new")="Create New Offer"
+    div.fixed.sticky
+        nav.top-bar(data-topbar)
+            ul.title-area
+                li.name
+                    h1
+                        a(href="/") Dine With DineX
+                li.toggle-topbar.menu-icon
+                    a(href="#")="Menu"
+            section.top-bar-section
+                ul.right
+                    li.nav-button: a(href="#")="Dashboard"
+                    li.nav-button: a(href="/newsfeed")="Newsfeed"
+                    li.nav-button: a(href="/new")="Create New Offer"
 
 
     div.content
