@@ -23,10 +23,13 @@ body {
 	text-align: center;
 }
 
-nav {
+.title-area {
 	padding: 0 2%;
 }
 
+.right {
+	padding: 0 2%;
+}
 /***************************
 ** Splash Page **
 ****************************/
