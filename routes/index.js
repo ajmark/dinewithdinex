@@ -22,11 +22,14 @@ exports.create_form = function (req, res){
 //Create
 exports.create = function ( req, res ){
   new Offer({
-    username : req.body.username,
-    content : req.body.offer,
+    user_id : "test",
+    location : req.body.location,
+    type : req.body.meal_type,
+    price : req.body.price,
+    expiration : req.body.expiration,
     created : Date.now()
   }).save( function( err, offer, count ){
-    res.redirect( '../views/newsfeed.jade' );
+    res.redirect( '/newsfeed' );
   });
 };
 

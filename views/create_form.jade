@@ -5,27 +5,26 @@ block content
 	div.row
 		div.small-12.columns.page-title
 			h1 Share My Wealth
-	div.row
-		//- TODO:Add functionality to form(method="post", action="/create")
-		form
+	div.row 
+		form(method="post", action="/create")
 			fieldset
 				legend Create a New Offer
 				div.row
 					div.small-12.columns
 						div.radio-select
 							label.row-title Select Meal Type
-							input(type="radio", name="select_type", value="block", id="select_mealblock")
+							input(type="radio", name="meal_type", value="block", id="select_mealblock")
 							label(for="select_mealblock") Block
-							input(type="radio", name="select_type",value="dinex", id="select_dinex")
+							input(type="radio", name="meal_type",value="dinex", id="select_dinex")
 							label(for="select_dinex") DineX
 				div.small-12.columns
 					div.location-input
-						input(type="location", placeholder="Where are you?")
+						input(type="location", placeholder="Where are you?", name="location")
 				div.row
 					div.small-6.columns
 						div.expiration-input
 							label Expires in...
-								select
+								select(name="expiration")
 									option(value="1") One Hour
 									option(value="2") Two Hours
 									option(value="3") Three Hours
@@ -40,6 +39,6 @@ block content
 									option(value="12") Twelve Hours
 					div.small-6.columns
 						div.currency-input
-							input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price")
+							input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
 
 				input.button.radius(type="submit", value="Post My Offer", id="submit_new")

@@ -4,3 +4,14 @@ block content
 	div.row
 		div.small-12.columns.page-title
 			h1= "Offers Newsfeed"
+			div(id="offers")
+				- each offer in offers
+					div.offer
+						div.name= offer.user_id
+						div.location= offer.location
+						div.type= offer.meal_type
+						div.price= offer.price.toFixed(2)
+						div.expiration= offer.expiration
+						div.created_at= offer.created
+						br
+						hr
