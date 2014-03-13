@@ -10,7 +10,7 @@ block content
 						div.name= offer.user_id
 						div.location= offer.location
 						div.type= offer.meal_type
-						div.price= offer.price.toFixed(2)
+						div.price= "$" + offer.fixedPrice()
 						div.expiration= offer.expiration
 						div.created_at= offer.created
 						br

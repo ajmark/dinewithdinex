@@ -13,5 +13,11 @@ var Offer = new Schema({
     created  : {type: Date, default:Date.now}
 });
  
+Offer.methods.fixedPrice = function(callback) {
+	var price = this.price;
+
+	return (price/100.00).toFixed(2);
+};
+
 mongoose.model( 'Offer', Offer );
  
