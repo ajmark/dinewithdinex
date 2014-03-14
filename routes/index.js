@@ -22,7 +22,7 @@ exports.create_form = function (req, res){
 //Create
 exports.create = function ( req, res ){
   new Offer({
-    user_id : "Joe Schmoe ",
+    user_id : "Joe Schmoe",
     location : req.body.location,
     type : req.body.meal_type,
     price : req.body.price,
