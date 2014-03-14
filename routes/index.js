@@ -33,7 +33,7 @@ exports.create = function ( req, res ){
   });
 };
 
-//Read
+//Read All
 exports.newsfeed = function ( req, res ){
   Offer.find( function ( err, offers, count ){
     res.render( '../views/newsfeed.jade', {

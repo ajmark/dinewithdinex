@@ -39,7 +39,7 @@ Offer.methods.formatDate = function(callback) {
 	return datestring; 
 }
 
-//formates the time of when the offer was created
+//formats the time of when the offer was created
 Offer.methods.formatTime = function(callback) {
 	//puts the time in 12 hour format
 	if (this.created.getHours() === 0){

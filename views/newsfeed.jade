@@ -1,3 +1,4 @@
+//- Newsfeed
 extends layout
 
 block content
@@ -7,7 +8,8 @@ block content
 	div.row(id="offers")
 		- each offer in offers
 			div.offer.row
-				div.small-4.columns.sell_pic
-					p=offer.user_id
-				div.small-8.columns.sell_info
-					p="Selling: $" + offer.fixedPrice() + " " + offer.type
+				a(href="#")
+					div.small-4.columns.sell_pic
+						p=offer.user_id
+					div.small-8.columns.sell_info
+						p="Selling: $" + offer.fixedPrice() + " " + offer.type
