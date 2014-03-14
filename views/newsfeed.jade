@@ -12,6 +12,6 @@ block content
 						div.type= offer.meal_type
 						div.price= "$" + offer.fixedPrice()
 						div.expiration= offer.expiration
-						div.created_at= offer.created
+						div.created_at= offer.formatTime() + " " + offer.formatDay() + " "+ offer.formatDate()
 						br
 						hr
