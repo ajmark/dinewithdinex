@@ -6,10 +6,12 @@ block content
 		div.small-12.columns.page-title
 			h1= "Offers Newsfeed"
 	div.row(id="offers")
-		- each offer in offers
+		- for (var i= offers.length-1, offer= offers[i]; i--; offer = offers[i]) {
 			div.offer.row
 				a(href="#")
 					div.small-4.columns.sell_pic
 						p=offer.user_id
 					div.small-8.columns.sell_info
 						p="Selling: $" + offer.fixedPrice() + " " + offer.type
+		- }
+			
