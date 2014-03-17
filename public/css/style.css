@@ -90,11 +90,16 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 ** Newsfeed **
 ****************************/
 
+#offers {
+	width: 100%;
+}
+
 .offer {
 	border-style:solid;
-	border-width: 2px;
-	border-color:black;
-	border-radius: 2px;
+	border-width: 1px;
+	border-color:white;
+	border-top: solid #ddd;
+	/*border-radius: 2px;*/
 	margin-top: 2% !important;
 }
 
@@ -108,10 +113,46 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 
 .sell_info {
 	/*text-align: center;*/
-	padding-top:50px;
+	/*padding-top:50px;*/
+	color: black;
+	margin-bottom: 12px;
 }
 
 .sell_info * {
-	float:right;
+	float:left;
 }
 
+.sell_price {
+	padding: 0px 4px 0px 0px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.sell_location {
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.sell_pic {
+	float:right;
+	color: #333;
+	margin-top: 7px;
+}
+
+.sell_pic * {
+	font-size: 10px;
+}
+
+.sell_type {
+	float: left;
+	display: inline-block;
+	color: white;
+	background-color: #961E1F;
+	border-radius: 4px;
+	padding: 2px 4px;
+	margin: 4px 0px 0px 0px;
+}
+
+.sell_type * {
+	font-size: 8px;
+}
