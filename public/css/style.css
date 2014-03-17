@@ -1,0 +1,158 @@
+/***************************
+** Application Stylesheet **
+****************************/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+/***************************
+** Page Layout **
+****************************/
+
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+}
+
+.content {
+	padding: 30px 10%;
+}
+
+.page-title {
+	text-align: center;
+}
+
+/***************************
+** Splash Page **
+****************************/
+
+.logo-lrg {
+	width:70%;
+	display: block;
+	margin:0 auto;
+}
+
+.fb_login {
+	padding-top:30px;
+	margin:0 auto;
+	display:block;
+}
+
+/***************************
+** Form Page **
+****************************/
+
+form {
+	line-height: 3em;
+}
+
+.row-title {
+	font-size:18px;
+}
+
+input {
+	text-align: center;
+}
+
+/*For Webkit browsers (Chrome, Safari) */
+input::-webkit-input-placeholder {
+   /* Your style here e.g. font size, color etc */
+   font-size:12px;
+}
+
+/* For Mozilla Firefox */
+input:-moz-placeholder {
+    /* Your style here e.g. font size, color etc */
+    font-size:14px;
+}
+
+input[type="location"], input[type="expiration"], input[type="textfield"]{
+	width:100%;
+	height:2.25em;
+	margin-top:2.3em;
+}
+
+.radio-select {
+	text-align: center;
+}
+
+#submit_new {
+	float:right;
+	margin-top:40px;
+}
+
+.expiration-input {
+	margin-top:15px;
+}
+
+/***************************
+** Newsfeed **
+****************************/
+
+#offers {
+	width: 100%;
+}
+
+.offer {
+	border-style:solid;
+	border-width: 1px;
+	border-color:white;
+	border-top: solid #ddd;
+	/*border-radius: 2px;*/
+	margin-top: 2% !important;
+}
+
+.offer:active {
+	background-color:whitesmoke;
+}
+
+.offer a:active {
+	color:blue;
+}
+
+.sell_info {
+	/*text-align: center;*/
+	/*padding-top:50px;*/
+	color: black;
+	margin-bottom: 12px;
+}
+
+.sell_info * {
+	float:left;
+}
+
+.sell_price {
+	padding: 0px 4px 0px 0px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.sell_location {
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.sell_pic {
+	float:right;
+	color: #333;
+	margin-top: 7px;
+}
+
+.sell_pic * {
+	font-size: 10px;
+}
+
+.sell_type {
+	float: left;
+	display: inline-block;
+	color: white;
+	background-color: #961E1F;
+	border-radius: 4px;
+	padding: 2px 4px;
+	margin: 4px 0px 0px 0px;
+}
+
+.sell_type * {
+	font-size: 8px;
+}

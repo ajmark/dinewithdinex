@@ -4,14 +4,18 @@ extends layout
 block content
 	div.row
 		div.small-12.columns.page-title
-			h1= "Offers Newsfeed"
+			h1= "Newsfeed"
 	div.row(id="offers")
 		- for (var i= offers.length-1, offer= offers[i]; i--; offer = offers[i]) {
 			div.offer.row
 				a(href="#")
+					div.columns
+						div.sell_type
+							p=offer.type
+					div.small-8.columns.sell_info
+						p.sell_price="$" + offer.fixedPrice() + " "
+						p.sell_location="@ " + offer.location + " ›"
 					div.small-4.columns.sell_pic
 						p=offer.user_id
-					div.small-8.columns.sell_info
-						p="Selling: $" + offer.fixedPrice() + " " + offer.type
 		- }
 			
