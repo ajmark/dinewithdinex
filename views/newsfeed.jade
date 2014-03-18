@@ -8,7 +8,7 @@ block content
 	div.row(id="offers")
 		- for (var i= offers.length-1, offer= offers[i]; i--; offer = offers[i]) {
 			div.offer.row
-				a(href="#")
+				a(href="/offer/" + offer._id)
 					div.columns
 						div.sell_type
 							p=offer.type

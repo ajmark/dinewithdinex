@@ -1,4 +1,5 @@
 var mongoose = require( 'mongoose' );
+var url = require('url');
 //Imports the models
 var Offer = mongoose.model( 'Offer' );
 
@@ -42,6 +43,17 @@ exports.newsfeed = function ( req, res ){
     });
   });
 }; 
+
+//Show Offer
+exports.show_offer = function (req, res){
+  Offer.findOne({'_id' : req.params.id}, function (err, offer){
+    console.log(offer);
+    res.render('../views/show.jade',{
+      title : 'Offer Information',
+      offer : offer
+    })
+  });
+};
 
 //Update
 
