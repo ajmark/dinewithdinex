@@ -2,6 +2,7 @@ var mongoose = require( 'mongoose' );
 var url = require('url');
 //Imports the models
 var Offer = mongoose.model( 'Offer' );
+var User = mongoose.model('User');
 
 //URL Routes
 
@@ -27,8 +28,20 @@ exports.user_dashboard = function(req, res){
   
 };
 
-//Offer CRUD
 
+//User CRUD/////
+/////////////////
+//Create
+exports.create_user = function(req,res){
+  new User({
+    fb_id : req.body.userID
+    }).save(function(err,user,count){
+      res.redirect('/newsfeed');
+    });
+};
+
+//Offer CRUD////
+/////////////////
 //Create
 exports.create = function ( req, res ){
   new Offer({

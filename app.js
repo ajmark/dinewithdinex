@@ -3,7 +3,8 @@
  * Module dependencies.
  */
  
-require( './models/offer'); //for mongoose. Require this first!!!
+require( './models/offer'); 
+require('./models/user');//for mongoose. Require this first!!!
 
 var express = require('express')
   , routes = require('./routes')
@@ -53,9 +54,11 @@ app.get('/', routes.splash);
 app.get('/newsfeed',routes.newsfeed);
 app.get('/new',routes.create_form);
 app.get('/offer/:id',routes.show_offer);
-app.get('/dashboard:/:id',routes.user_dashboard);
-app.post('/create', routes.create );
+app.get('/dashboard/:id',routes.user_dashboard);
 app.get('/logout',routes.logout);
+
+app.post('/create', routes.create );
+app.post('/create_user',routes.create_user);
 
 // Specifies address on localhost
 http.createServer(app).listen(app.get('port'), function(){
