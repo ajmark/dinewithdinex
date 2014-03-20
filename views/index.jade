@@ -1,7 +1,10 @@
 extends layout
 
 block content
-  div.row
-    div.small-12.columns
-      img.logo-lrg(src="/assets/logo.png")
-      a(href="#"): img.fb_login(src="/assets/fb_login/active_600@2x.png")
+	div.row
+		div.small-12.columns
+			img.logo-lrg(src="/assets/logo.png")
+			div(id="fb-root")
+				script(type="text/javascript" src="/js/fb_login.js")
+				fb:login-button.fb_login(show-faces="true", width="200", max-rows="1", data-size="xlarge")
+				//- a(href="#"): img.fb_login(src="/assets/fb_login/active_600@2x.png")

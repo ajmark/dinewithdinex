@@ -33,10 +33,13 @@ body {
 	margin:0 auto;
 }
 
+#fb-root {
+	display:table;
+}
+
 .fb_login {
-	padding-top:30px;
+	display:table-cell;
 	margin:0 auto;
-	display:block;
 }
 
 /***************************
