@@ -53,7 +53,9 @@ app.get('/', routes.splash);
 app.get('/newsfeed',routes.newsfeed);
 app.get('/new',routes.create_form);
 app.get('/offer/:id',routes.show_offer);
-app.post( '/create', routes.create );
+app.get('/dashboard:/:id',routes.user_dashboard);
+app.post('/create', routes.create );
+app.get('/logout',routes.logout);
 
 // Specifies address on localhost
 http.createServer(app).listen(app.get('port'), function(){

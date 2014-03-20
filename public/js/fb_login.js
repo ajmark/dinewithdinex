@@ -54,3 +54,9 @@
       console.log('Good to see you, ' + response.name + '.');
     });
   }
+
+  function fbLogout() {
+          FB.logout(function (response) {
+              // user is now logged out
+          });
+      }

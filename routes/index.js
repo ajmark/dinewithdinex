@@ -17,6 +17,15 @@ exports.create_form = function (req, res){
   });
 };
 
+//Facebook Logout
+exports.logout = function(req,res){
+  res.redirect("/");
+};
+
+//Dashboard Route
+exports.user_dashboard = function(req, res){
+  
+};
 
 //Offer CRUD
 

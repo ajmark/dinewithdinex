@@ -34,12 +34,13 @@ body {
 }
 
 #fb-root {
-	display:table;
+	display: block;
+	margin: 0 auto;
+	width: 65%;
 }
 
 .fb_login {
-	display:table-cell;
-	margin:0 auto;
+
 }
 
 /***************************
