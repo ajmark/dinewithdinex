@@ -55,6 +55,7 @@ function getCookie(name) {
 }
 
 function directToDashboard() {
+  // TODO: Needs to be changed to http://dinewithdinex.herokuapps.com for production
   window.location.href = "http://localhost:3333/dashboard/" + getCookie("fb_id");
 }
 
