@@ -25,7 +25,7 @@ exports.logout = function(req,res){
 
 //Dashboard Route
 exports.user_dashboard = function(req, res){
-  Offer.find({"fb_id" : req.params.id}, function (err, offers, count){
+  Offer.find({"user_id" : req.params.id}, function (err, offers, count){
     res.render("../views/dashboard.jade",{
       title : "User Dashboard",
        offers : offers

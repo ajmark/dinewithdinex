@@ -4,3 +4,15 @@ block content
 	div.row
 		div.small-12.columns.page-title
 			h1= "Dashboard"
+	div.row(id="offers")
+		- each offer in offers
+			div.offer.row
+				a(href="/offer/" + offer._id)
+					div.columns
+						div.sell_type
+							p=offer.type
+					div.small-8.columns.sell_info
+						p.sell_price="$" + offer.fixedPrice() + " "
+						p.sell_location="@ " + offer.location + " ›"
+					div.small-4.columns.sell_pic
+						p=offer.user_id
