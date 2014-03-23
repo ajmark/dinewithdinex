@@ -25,9 +25,13 @@ exports.logout = function(req,res){
 
 //Dashboard Route
 exports.user_dashboard = function(req, res){
-  
+  Offer.find({"fb_id" : req.params.id}, function (err, offers, count){
+    res.render("../views/dashboard.jade",{
+      title : "User Dashboard",
+       offers : offers
+    });
+  });
 };
-
 
 //User CRUD/////
 /////////////////
@@ -36,7 +40,7 @@ exports.create_user = function(req,res){
   new User({
     fb_id : req.body.userID
     }).save(function(err,user,count){
-      res.redirect('/newsfeed');
+      res.redirect('/dashboard/' + req.body.userID);
     });
 };
 
@@ -45,7 +49,7 @@ exports.create_user = function(req,res){
 //Create
 exports.create = function ( req, res ){
   new Offer({
-    user_id : "Joe Schmoe",
+    user_id : req.body.user_id,
     location : req.body.location,
     type : req.body.meal_type,
     price : req.body.price,
@@ -69,11 +73,10 @@ exports.newsfeed = function ( req, res ){
 //Show Offer
 exports.show_offer = function (req, res){
   Offer.findOne({'_id' : req.params.id}, function (err, offer){
-    console.log(offer);
     res.render('../views/show.jade',{
       title : 'Offer Information',
       offer : offer
-    })
+    });
   });
 };
 

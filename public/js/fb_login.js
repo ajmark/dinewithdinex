@@ -24,6 +24,7 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
       data: JSON.stringify(data),
       contentType: "application/json"
     });
+    setCookie("fb_id", data.userID, 1);
     testAPI();
   } else if (response.status === 'not_authorized') {
     // In this case, the person is logged into Facebook, but not into the app, so we call
@@ -68,4 +69,11 @@ function fbLogout() {
             // user is now logged out
         });
 }
+
+function checkLogin() {
+  console.log("hello");
+  return FB.getAuthResponse();
+}
+
+
 

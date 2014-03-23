@@ -15,8 +15,7 @@ html
     script(type='text/javascript' src="/js/foundation.topbar.js")
     script(type='text/javascript' src="/js/main.js")
     script(type='text/javascript' src="/js/jquery.formatCurrency-1.4.0.min.js")
-    script(type="text/javascript" src="/js/fb_login.js")
-
+    script(type='text/javascript' src='/js/fb_login.js')
     <meta name="viewport" content="width=device-width" />
 
     script(type='text/javascript').
@@ -40,8 +39,7 @@ html
                     a(href="#")="Menu"
             section.top-bar-section
                 ul.right
-
-                    li.nav-button: a(href="#")="Dashboard"
+                    li.nav-button: a(onclick="directToDashboard()")="Dashboard"
                     li.nav-button: a(href="/newsfeed")="Newsfeed"
                     li.nav-button: a(href="/new")="Create New Offer"
                     li.nav-button: a(href="/logout" onclick="fbLogout()")="Logout"
