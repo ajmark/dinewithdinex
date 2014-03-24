@@ -18,7 +18,15 @@ exports.create_form = function (req, res){
   });
 };
 
-//Facebook Logout
+//Facebook Routes
+exports.login_success = function(req,res,next){
+  res.redirect("/newsfeed")
+};
+
+exports.login_error = function(req,res,next){
+  res.send("Error logging in.");
+};
+
 exports.logout = function(req,res){
   res.redirect("/");
 };
