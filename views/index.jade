@@ -1,9 +1,35 @@
-extends layout
+//- Header Partial
 
-block content
-	div.row
-		div.small-12.columns
-			img.logo-lrg(src="/assets/logo.png")
-			div(id="fb-root")
-				//- fb:login-button.fb_login(show-faces="true", width="200", max-rows="1", data-size="xlarge")
-				a(href="/auth/facebook"): img.fb_login(src="/assets/fb_login/active_600@2x.png")
+doctype html
+html
+  head
+    title= 'Dine With DineX'
+    //- Stylesheets
+    link(rel='stylesheet', href='/css/foundation.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/normalize.css')
+    //- Javascript
+    script(type='text/javascript' src="/js/jquery.js")
+    script(type='text/javascript' src="/js/foundation.min.js")
+    script(type='text/javascript' src="/js/foundation.dropdown.js")    
+    script(type='text/javascript' src="/js/foundation.topbar.js")
+    script(type='text/javascript' src="/js/main.js")
+    script(type='text/javascript' src="/js/jquery.formatCurrency-1.4.0.min.js")
+    script(type='text/javascript' src='/js/fb_login.js')
+    meta(name="viewport" content="width=device-width")
+
+  body
+    //- Navbar
+    div.fixed.sticky
+        nav.top-bar(data-topbar)
+            ul.title-area
+                li.name
+                    h1
+                        a(href="/") Dine With DineX
+    div.row.content
+      div.small-12.columns
+          img.logo-lrg(src="/assets/logo.png")
+          div(id="fb-root")
+              //- fb:login-button.fb_login(show-faces="true", width="200", max-rows="1", data-size="xlarge")
+              a(href="/auth/facebook"): img.fb_login(src="/assets/fb_login/active_600@2x.png")    
+

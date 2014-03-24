@@ -1,5 +1,6 @@
 var mongoose = require( 'mongoose' );
 var url = require('url');
+var passport = require("passport");
 //Imports the models
 var Offer = mongoose.model( 'Offer' );
 var User = mongoose.model('User');
@@ -75,6 +76,7 @@ exports.newsfeed = function ( req, res ){
         title : 'Offers Newsfeed',
         offers : offers
     });
+    console.log(offers == false);
   });
 }; 
 
