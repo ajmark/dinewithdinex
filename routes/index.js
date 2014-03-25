@@ -76,7 +76,6 @@ exports.newsfeed = function ( req, res ){
         title : 'Offers Newsfeed',
         offers : offers
     });
-    console.log(offers == false);
   });
 }; 
 
@@ -92,4 +91,11 @@ exports.show_offer = function (req, res){
 
 //Update
 
-//Destroy
+//Delete
+exports.delete_offer = function (req,res){
+  Offer.findOneAndRemove({'_id' : req.params.id}, function (err,offer){
+    res.redirect('/newsfeed');
+  });
+};
+
+

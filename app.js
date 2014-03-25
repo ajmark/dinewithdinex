@@ -93,8 +93,11 @@ passport.deserializeUser(function(obj, done) {
 });
 
 //Create Routes
-app.post('/create', routes.create );
+app.post('/create', routes.create);
 app.post('/create_user',routes.create_user);
+
+//Delete Routes
+app.get('/delete/:id', routes.delete_offer);
 
 // Specifies address on localhost
 http.createServer(app).listen(app.get('port'), function(){

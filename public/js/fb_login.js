@@ -71,7 +71,6 @@ function fbLogout() {
 }
 
 function checkLogin() {
-  console.log("hello");
   return FB.getAuthResponse();
 }
 
