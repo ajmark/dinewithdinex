@@ -1,0 +1,71 @@
+//- Edit Form 
+extends layout
+
+block content
+
+    div.row
+        div.small-12.columns.page-title
+            h1 Edit My Offer
+    div.row 
+        form(method="post", action="/update")
+            fieldset
+                legend Update
+                div.row
+                    div.small-12.columns
+                        div.radio-select
+                            label.row-title Select Meal Type
+                            -if (offer.type === "Block"){
+                                input(type="radio", name="meal_type", value="Block", id="select_mealblock",checked)
+                                label(for="select_mealblock") Block
+                                input(type="radio", name="meal_type",value="DineX", id="select_dinex")
+                                label(for="select_dinex") DineX
+                            -} else {
+                                input(type="radio", name="meal_type", value="Block", id="select_mealblock")
+                                label(for="select_mealblock") Block
+                                input(type="radio", name="meal_type",value="DineX", id="select_dinex",checked)
+                                label(for="select_dinex") DineX
+                            -}
+                div.small-12.columns
+                    div.location-input
+                        -var location = offer.location
+                            input(type="location", placeholder="Where are you?", name="location", value=location)
+                div.row
+                    div.small-6.columns
+                        div.expiration-input
+                            label Expires in...
+                            -var expiration = offer.expiration
+                            -if (expiration === 1){
+                                select(name="expiration")
+                                    option(value="1", selected) One Hour
+                                    option(value="2") Two Hours
+                                    option(value="3") Three Hours
+                                    option(value="4") Four Hours
+                            -} else if (expiration === 2) {
+                                select(name="expiration")
+                                    option(value="1") One Hour
+                                    option(value="2", selected) Two Hours
+                                    option(value="3") Three Hours
+                                    option(value="4") Four Hours
+                            -} else if (expiration === 3){
+                                select(name="expiration")
+                                    option(value="1") One Hour
+                                    option(value="2") Two Hours
+                                    option(value="3",selected) Three Hours
+                                    option(value="4") Four Hours
+                            -} else if (expiration ===4){
+                                select(name="expiration")
+                                    option(value="1", selected) One Hour
+                                    option(value="2") Two Hours
+                                    option(value="3") Three Hours
+                                    option(value="4",selected) Four Hours
+                            -}
+                    div.small-6.columns
+                        div.currency-input
+                          -var price = "$"+offer.fixedPrice()
+                            input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price", value = price)
+                input(type="hidden", name="user_id")
+                input.button.radius(type="submit", value="Post My Offer", id="submit_new")
+    //- sets value of user_id as value from cookie
+    script.
+        document.getElementsByName("user_id")[0].value = getCookie("fb_id");
+

@@ -55,6 +55,7 @@ exports.create_user = function(req,res){
 
 //Offer CRUD////
 /////////////////
+
 //Create
 exports.create = function ( req, res ){
   new Offer({
@@ -90,6 +91,18 @@ exports.show_offer = function (req, res){
 };
 
 //Update
+exports.get_edit_form = function (req,res){
+  Offer.findOne({'_id' : req.params.id}, function (err,offer){
+    res.render("../views/edit_form.jade",{
+      title:"Edit Offer",
+      offer:offer
+    });
+  });
+};
+
+exports.update_offer = function (req,res){
+  
+};
 
 //Delete
 exports.delete_offer = function (req,res){

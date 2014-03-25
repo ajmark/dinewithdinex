@@ -96,6 +96,10 @@ passport.deserializeUser(function(obj, done) {
 app.post('/create', routes.create);
 app.post('/create_user',routes.create_user);
 
+//Update Route
+app.get('/edit/:id',routes.get_edit_form);
+app.get('/update/:id',routes.update_offer)
+
 //Delete Routes
 app.get('/delete/:id', routes.delete_offer);
 
