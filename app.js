@@ -72,6 +72,7 @@ app.get('/', routes.splash);
 app.get('/newsfeed',routes.newsfeed);
 app.get('/new',routes.create_form);
 app.get('/offer/:id',routes.show_offer);
+app.get('/status/:id',routes.show_status);
 app.get('/dashboard/:id',routes.user_dashboard);
 app.get('/logout',routes.logout);
 app.get('/success',routes.login_success);
