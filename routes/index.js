@@ -66,7 +66,11 @@ exports.create = function ( req, res ){
     type : req.body.meal_type,
     price : req.body.price,
     expiration : req.body.expiration,
-    created : Date.now()
+    created : Date.now(),
+    accepted : false,
+    completed : false,
+    contact_info : req.body.contact_info,
+    visible : true
   }).save( function( err, offer, count ){
     res.redirect( '/newsfeed' );
   });
