@@ -6,6 +6,7 @@ var Currency = mongoose.Types.Currency;
  
 var Offer = new Schema({
     user_id : {type: String, required:true},
+    fb_name : {type: String, required:true},
     location: {type:String, required:true},
     type  : {type: String, required:true},
     price : {type: Currency, required:true},

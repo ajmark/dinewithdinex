@@ -19,10 +19,16 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
     var data = {};
     data.userID = FB.getAuthResponse().userID;
     $.ajax({
-      type: "post",
-      url: "/create_user",
-      data: JSON.stringify(data),
-      contentType: "application/json"
+      url:"http://graph.facebook.com/" + data.userID,
+    }).done(function(info){
+      data.username = info.name
+      $.ajax({
+        type: "post",
+        url: "/create_user",
+        data: JSON.stringify(data),
+        contentType: "application/json"
+      });
+      setCookie("fb_name", data.username, 1);
     });
     setCookie("fb_id", data.userID, 1);
     testAPI();

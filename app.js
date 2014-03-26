@@ -100,7 +100,7 @@ app.post('/create_user',routes.create_user);
 app.get('/edit/:id',routes.get_edit_form);
 app.post('/update/:id',routes.update_offer)
 
-//Delete Routes
+//Delete Route
 app.get('/delete/:id', routes.delete_offer);
 
 // Specifies address on localhost

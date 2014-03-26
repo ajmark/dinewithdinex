@@ -34,7 +34,9 @@ block content
 						div.currency-input
 							input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
 				input(type="hidden", name="user_id")
+				input(type="hidden", name="fb_name")
 				input.button.radius(type="submit", value="Post My Offer", id="submit_new")
 	script.
 		document.getElementsByName("user_id")[0].value = getCookie("fb_id");
+		document.getElementsByName("fb_name")[0].value = getCookie("fb_name")
 

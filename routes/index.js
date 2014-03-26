@@ -47,7 +47,8 @@ exports.user_dashboard = function(req, res){
 //Create
 exports.create_user = function(req,res){
   new User({
-    fb_id : req.body.userID
+    fb_id : req.body.userID,
+    name : req.body.username
     }).save(function(err,user,count){
       res.redirect('/dashboard/' + req.body.userID);
     });
@@ -60,6 +61,7 @@ exports.create_user = function(req,res){
 exports.create = function ( req, res ){
   new Offer({
     user_id : req.body.user_id,
+    fb_name : req.body.fb_name,
     location : req.body.location,
     type : req.body.meal_type,
     price : req.body.price,
