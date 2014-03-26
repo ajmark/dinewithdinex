@@ -12,4 +12,7 @@ block content
         -} else {
             div.offer.row
                 p= offer.buyer_name + " has accepted your offer"
+                a(onclick="rejectOffer()")= "Reject this offer"
+                br
+                a(onclick="completeOffer()")= "Complete this offer"
         -}

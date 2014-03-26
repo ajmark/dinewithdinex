@@ -1,4 +1,4 @@
-//Sets cookie for fb_id
+//Sets cookie for fb_id & fb_name
 function setCookie(c_name,value,exdays) {
   //sets the cookie value 
   var exdate=new Date();
@@ -55,10 +55,10 @@ function getCookie(name) {
 }
 
 function directToDashboard() {
-  // TODO: Needs to be changed to http://dinewithdinex.herokuapps.com for production
-  window.location.href = "http://localhost:3333/dashboard/" + getCookie("fb_id");
+  window.location.href = "/dashboard/" + getCookie("fb_id");
 }
 
+//Dependent on URL. May need to fix later
 function acceptOffer() {
   var a = document.URL.split("/")
   var id = a[a.length-1]
@@ -74,8 +74,41 @@ function acceptOffer() {
     url: "/update/"+id,
     data: JSON.stringify(data),
     contentType: "application/json"
+  }).done(function(){
+    directToDashboard();
   });
 }
-  
+ 
+function rejectOffer() {
+  var a = document.URL.split("/")
+  var id = a[a.length-1]
+  var data = {
+    accepted : false,
+    visible : true, 
+    buyer_id : null,
+    buyer_name : null
+  }
+
+  $.ajax({
+    type: "post",
+    url: "/update/"+id,
+    data: JSON.stringify(data),
+    contentType: "application/json"
+  }).done(function(){
+    directToDashboard();
+  });
+} 
+
+function completeOffer() {
+  var a = document.URL.split("/")
+  var id = a[a.length-1]
+
+  $.ajax({
+    type: "get",
+    url: "/delete/"+id,
+  }).done(function(){
+    directToDashboard();
+  });
+}
 
 
