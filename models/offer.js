@@ -15,7 +15,9 @@ var Offer = new Schema({
     accepted : {type:Boolean},
     completed : {type:Boolean},
     contact_info : {type: String, required:true},
-    visible : {type:Boolean}
+    visible : {type:Boolean},
+    buyer_id : {type:String},
+    buyer_name : {type:String}
 });
  
 //Formats the price of offer to user friendly format

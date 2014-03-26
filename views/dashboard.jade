@@ -18,6 +18,7 @@ block content
 					div.small-8.columns.sell_info
 						p.sell_price="$" + offer.fixedPrice() + " "
 						p.sell_location="@ " + offer.location + " ›"
+						p.accepted="Accepted: " + offer.accepted
 					div.small-4.columns.sell_pic
 						p=offer.fb_name
 				a.delete(href="/delete/" + offer._id)="Delete Offer"
