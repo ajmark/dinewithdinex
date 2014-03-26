@@ -59,3 +59,23 @@ function directToDashboard() {
   window.location.href = "http://localhost:3333/dashboard/" + getCookie("fb_id");
 }
 
+function acceptOffer() {
+  var a = document.URL.split("/")
+  var id = a[a.length-1]
+  var data = {
+    accepted : true,
+    visible : false,
+    buyer_id : getCookie("fb_id"),
+    buyer_name : getCookie("fb_name")
+  }
+
+  $.ajax({
+    type: "post",
+    url: "/update/"+id,
+    data: JSON.stringify(data),
+    contentType: "application/json"
+  });
+}
+  
+
+

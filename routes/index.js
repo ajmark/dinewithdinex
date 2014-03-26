@@ -43,7 +43,7 @@ exports.user_dashboard = function(req, res){
 };
 
 exports.show_status = function(req,res){
-  Offer.find({"_id" : req.params.id},function (err,offer){
+  Offer.findOne({"_id" : req.params.id},function (err,offer){
     res.render("../views/offer_status.jade",{
       title:"Show Offer Status",
       offer : offer
