@@ -114,4 +114,14 @@ function completeOffer() {
   });
 }
 
+function getFoursquareLocations() {
+  var token = "5WPVOYU45PPZMBSF4Y3LNOHQQZGO0QP2I4G1FWIVMTKKBDMS"
+  $.ajax({
+    url: "https://api.foursquare.com/v2/venues/search?near=Carnegie%20Mellon%20University" + 
+    "&categoryId=4bf58dd8d48988d1a1941735,4d4b7105d754a06374d81259&intent=checkin&radius=300" +
+    "&oauth_token="+token+"&v=20140327"
+  }).done(function(data){
+    console.log(data)
+  });
+}
 
