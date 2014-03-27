@@ -100,10 +100,15 @@ function rejectOffer() {
 function completeOffer() {
   var a = document.URL.split("/")
   var id = a[a.length-1]
+  var data = {
+    completed : true
+  }
 
   $.ajax({
-    type: "get",
-    url: "/delete/"+id,
+    type: "post",
+    url: "/update/"+id,
+    data : JSON.stringify(data),
+    contentType: "application/json"
   }).done(function(){
     directToDashboard();
   });

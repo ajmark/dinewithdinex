@@ -118,7 +118,7 @@ exports.get_edit_form = function (req,res){
 
 exports.update_offer = function (req,res){
   Offer.findOneAndUpdate({'_id' : req.params.id},req.body, function (err,offer){
-    res.redirect('/newsfeed')
+    res.redirect('/dashboard/' + req.body.user_id )
   });
 };
 
