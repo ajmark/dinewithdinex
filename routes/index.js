@@ -44,10 +44,22 @@ exports.user_dashboard = function(req, res){
 
 exports.show_status = function(req,res){
   Offer.findOne({"_id" : req.params.id},function (err,offer){
-    res.render("../views/offer_status.jade",{
-      title:"Show Offer Status",
-      offer : offer
-    });
+    if(!err){
+      res.render("../views/offer_status.jade",{
+        title:"Show Offer Status",
+        offer : offer
+      });
+    } else {
+      res.redirect("/404")
+    };
+  });
+};
+
+//Error Page//////
+//////////////////
+exports.page_error = function(req,res){
+  res.render("../views/404_error.jade",{
+    title:"404 Error"
   });
 };
 
@@ -99,10 +111,14 @@ exports.newsfeed = function ( req, res ){
 //Show Offer
 exports.show_offer = function (req, res){
   Offer.findOne({'_id' : req.params.id}, function (err, offer){
-    res.render('../views/show.jade',{
-      title : 'Offer Information',
-      offer : offer
-    });
+    if (!err){
+      res.render('../views/show.jade',{
+        title : 'Offer Information',
+        offer : offer
+      });
+    } else {
+      res.redirect('/404')
+    };
   });
 };
 

@@ -79,7 +79,9 @@ app.get('/status/:id',routes.show_status);
 app.get('/dashboard/:id',routes.user_dashboard);
 app.get('/logout',routes.logout);
 app.get('/success',routes.login_success);
+//Error Routes
 app.get('/error',routes.login_error);
+app.get('/404',routes.page_error);
 
 //Facebook Login
 app.get('/auth/facebook', passport.authenticate('facebook'));
