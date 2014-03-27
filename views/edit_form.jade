@@ -16,9 +16,9 @@ block content
                         div.radio-select
                             label.row-title Select Meal Type
                             -if (offer.type === "Block"){
-                                input(type="radio", name="meal_type", value="Block", id="select_mealblock",checked)
+                                input(type="radio", name="type", value="Block", id="select_mealblock",checked)
                                 label(for="select_mealblock") Block
-                                input(type="radio", name="meal_type",value="DineX", id="select_dinex")
+                                input(type="radio", name="type",value="DineX", id="select_dinex")
                                 label(for="select_dinex") DineX
                             -} else {
                                 input(type="radio", name="meal_type", value="Block", id="select_mealblock")

@@ -82,7 +82,7 @@ exports.create = function ( req, res ){
     buyer_id : null,
     buyer_name : null
   }).save( function( err, offer, count ){
-    res.redirect( '/newsfeed' );
+    res.redirect( '/dashboard/' + user_id );
   });
 };
 
@@ -118,6 +118,7 @@ exports.get_edit_form = function (req,res){
 
 exports.update_offer = function (req,res){
   Offer.findOneAndUpdate({'_id' : req.params.id},req.body, function (err,offer){
+    console.log(req.body)
     res.redirect('/dashboard/' + req.body.user_id )
   });
 };
