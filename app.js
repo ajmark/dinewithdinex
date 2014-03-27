@@ -37,7 +37,8 @@ app.configure(function(){
 passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
   clientSecret: FACEBOOK_APP_SECRET,
-  callbackURL: 'http://localhost:3333/auth/facebook/callback'
+  //needs to be changed for localhots and heroku
+  callbackURL: 'http://dinewithdinex.herokuapp.com/auth/facebook/callback'
 }, function(accessToken, refreshToken, profile, done) {
   process.nextTick(function() {
     //Assuming user exists
