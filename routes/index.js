@@ -79,7 +79,6 @@ exports.create = function ( req, res ){
     accepted : false,
     completed : false,
     contact_info : req.body.contact_info,
-    visible : true,
     buyer_id : null,
     buyer_name : null
   }).save( function( err, offer, count ){
@@ -89,7 +88,7 @@ exports.create = function ( req, res ){
 
 //Read All
 exports.newsfeed = function ( req, res ){
-  Offer.find( function ( err, offers, count ){
+  Offer.find({'accepted' : false}, function ( err, offers, count ){
     res.render( '../views/newsfeed.jade', {
         title : 'Offers Newsfeed',
         offers : offers

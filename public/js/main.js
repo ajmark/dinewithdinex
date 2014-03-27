@@ -64,7 +64,6 @@ function acceptOffer() {
   var id = a[a.length-1]
   var data = {
     accepted : true,
-    visible : false,
     buyer_id : getCookie("fb_id"),
     buyer_name : getCookie("fb_name")
   }
@@ -84,7 +83,6 @@ function rejectOffer() {
   var id = a[a.length-1]
   var data = {
     accepted : false,
-    visible : true, 
     buyer_id : null,
     buyer_name : null
   }
