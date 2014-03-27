@@ -10,6 +10,6 @@
     "stylus": "*",
     "mongoose": "3.x.x",
     "passport":"*",
-    "passport-facebook":,"*"
+    "passport-facebook":"*"
   }
 }
