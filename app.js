@@ -38,6 +38,8 @@ passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
   clientSecret: FACEBOOK_APP_SECRET,
   //needs to be changed for localhots and heroku
+  //localhost:3333
+  //dinewithdinex.herokuapp.com
   callbackURL: 'http://dinewithdinex.herokuapp.com/auth/facebook/callback'
 }, function(accessToken, refreshToken, profile, done) {
   process.nextTick(function() {
