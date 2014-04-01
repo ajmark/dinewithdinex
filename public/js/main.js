@@ -53,6 +53,9 @@ function getCookies() {
 function getCookie(name) {
     return getCookies()[name];
 }
+function deleteCookie(name){
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
 
 function directToDashboard() {
   window.location.href = "/dashboard/" + getCookie("fb_id");
@@ -121,7 +124,9 @@ function getFoursquareLocations() {
     "&categoryId=4bf58dd8d48988d1a1941735,4d4b7105d754a06374d81259&intent=checkin&radius=300" +
     "&oauth_token="+token+"&v=20140327"
   }).done(function(data){
-    console.log(data)
+    for (i=0; i < data.response.venues.length-1; i++) {
+      $("select[name='location']").append("<option value=" + data.response.venues[i].name + ">"+ data.response.venues[i].name +"</option>")
+    };
   });
 }
 

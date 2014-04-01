@@ -19,8 +19,8 @@ block content
 							input(type="radio", name="meal_type",value="DineX", id="select_dinex")
 							label(for="select_dinex") DineX
 				div.small-6.columns
-					div.location-input
-						input(type="location", placeholder="Where are you?", name="location")
+					div.currency-input
+						input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
 				div.small-6.columns
 					div.contact-input
 						input(type="textfield",placeholder="Enter phone number",name="contact_info")
@@ -29,17 +29,24 @@ block content
 						div.expiration-input
 							label Expires in...
 								select(name="expiration")
+									option(value="",disabled selected) Select your hours
 									option(value="1") One Hour
 									option(value="2") Two Hours
 									option(value="3") Three Hours
 									option(value="4") Four Hours
 					div.small-6.columns
-						div.currency-input
-							input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
+						div.location-input
+							label Select Your Location...
+								select(name="location")
+									option(value="",disabled selected) Select your locations
 				input(type="hidden", name="user_id")
 				input(type="hidden", name="fb_name")
 				input.button.radius(type="submit", value="Post My Offer", id="submit_new")
 	script.
-		document.getElementsByName("user_id")[0].value = getCookie("fb_id");
-		document.getElementsByName("fb_name")[0].value = getCookie("fb_name")
+		$(document).ready(function(){
+			document.getElementsByName("user_id")[0].value = getCookie("fb_id");
+			document.getElementsByName("fb_name")[0].value = getCookie("fb_name")
+			getFoursquareLocations()
+		});
+
 
