@@ -28,7 +28,6 @@ body {
 ****************************/
 
 .logo-lrg {
-	width:70%;
 	display: block;
 	margin:0 auto;
 }
@@ -36,7 +35,6 @@ body {
 #fb-root {
 	display: block;
 	margin: 0 auto;
-	width: 65%;
 }
 
 .fb_login {

@@ -993,7 +993,8 @@ meta.foundation-mq-topbar {
   height: 45px;
   line-height: 45px;
   /*position: relative;*/
-  background: #464646;
+  background: #800000;
+  opacity: 0.6;
   margin-bottom: 0; }
   .top-bar ul {
     margin-bottom: 0;
@@ -1070,7 +1071,7 @@ meta.foundation-mq-topbar {
     height: auto;
     background: transparent; }
     .top-bar.expanded .title-area {
-      background: #464646; }
+      background: #800000; }
     .top-bar.expanded .toggle-topbar a {
       color: #888888; }
       .top-bar.expanded .toggle-topbar a::after {
@@ -1088,7 +1089,7 @@ meta.foundation-mq-topbar {
     width: 100%;
     height: auto;
     display: block;
-    background: #464646;
+    background: #800000;
     font-size: 16px;
     margin: 0; }
   .top-bar-section .divider,
@@ -1208,7 +1209,7 @@ meta.foundation-mq-topbar {
 
 @media only screen and (min-width: 40.063em) {
   .top-bar {
-    background: #464646;
+    background: #800000;
     *zoom: 1;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
@@ -1254,7 +1255,7 @@ meta.foundation-mq-topbar {
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #464646; }
+      background: #800000; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background: #272727; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
