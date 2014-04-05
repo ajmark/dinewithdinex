@@ -70,7 +70,7 @@ function acceptOffer() {
     buyer_id : getCookie("fb_id"),
     buyer_name : getCookie("fb_name")
   }
-
+  directToDashboard();
   $.ajax({
     type: "post",
     url: "/update/"+id,
@@ -89,14 +89,13 @@ function rejectOffer() {
     buyer_id : null,
     buyer_name : null
   }
-
   $.ajax({
     type: "post",
     url: "/update/"+id,
     data: JSON.stringify(data),
     contentType: "application/json"
   }).done(function(){
-    directToDashboard();
+      directToDashboard();
   });
 } 
 

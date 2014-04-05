@@ -23,22 +23,22 @@ block content
 						input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
 				div.small-6.columns
 					div.contact-input
-						input(type="textfield",placeholder="Enter phone number",name="contact_info")
+						input(type="textfield",placeholder="Phone Number",name="contact_info")
 				div.row
 					div.small-6.columns
 						div.expiration-input
 							label Expires in...
 								select(name="expiration")
-									option(value="",disabled selected) Select your hours
+									option(value="",disabled selected) Select hours
 									option(value="1") One Hour
 									option(value="2") Two Hours
 									option(value="3") Three Hours
 									option(value="4") Four Hours
 					div.small-6.columns
 						div.location-input
-							label Select Your Location...
+							label Pick Location...
 								select(name="location")
-									option(value="",disabled selected) Select your locations
+									option(value="",disabled selected) Select location
 				input(type="hidden", name="user_id")
 				input(type="hidden", name="fb_name")
 				input.button.radius(type="submit", value="Post My Offer", id="submit_new")

@@ -3,24 +3,80 @@ extends layout
 block content
 	div.row
 		div.small-12.columns.page-title
-			h1= "Dashboard"
-	div.row(id="offers")
-		- if (offers == false){
+			h1= "Welcome, " + user.name
+	div.row(class="offers")
+		h3="Pending Offers"
+		-var count = 0;
+		-each offer in offers
+			-if (!offer.accepted && !offer.completed){
+				div.offer.row
+					a(href="/status/" + offer._id)
+						div.columns
+							div.sell_type
+								p=offer.type
+						div.small-8.columns.sell_info
+							p.sell_price="$" + offer.fixedPrice() + " "
+							p.sell_location="@ " + offer.location + " ›"
+							p.accepted="Accepted: " + offer.accepted
+							p.completed="Completed: " + offer.completed 
+						div.small-4.columns.sell_pic
+							p=offer.fb_name
+					a.delete(href="/delete/" + offer._id)="Delete Offer"
+					a.edit(href="/edit/" + offer._id)="Edit Offer"
+				-count ++;
+			-}
+		-if (count == 0){
 			div.offer.row
-				p You have not made any offers yet.
+				p You have not made any offers.
 		-}
-		- each offer in offers
+	div.row(class="offers")
+		h3="Accepted Offers"
+		-var count = 0;
+		-each offer in offers
+			-if (offer.accepted && !offer.completed){
+				div.offer.row
+					a(href="/status/" + offer._id)
+						div.columns
+							div.sell_type
+								p=offer.type
+						div.small-8.columns.sell_info
+							p.sell_price="$" + offer.fixedPrice() + " "
+							p.sell_location="@ " + offer.location + " ›"
+							p.accepted="Accepted: " + offer.accepted
+							p.completed="Completed: " + offer.completed 
+						div.small-4.columns.sell_pic
+							p=offer.fb_name
+					a.delete(href="/delete/" + offer._id)="Delete Offer"
+					a.edit(href="/edit/" + offer._id)="Edit Offer"
+				-count ++;
+			-}
+		-if (count == 0){
 			div.offer.row
-				a(href="/status/" + offer._id)
-					div.columns
-						div.sell_type
-							p=offer.type
-					div.small-8.columns.sell_info
-						p.sell_price="$" + offer.fixedPrice() + " "
-						p.sell_location="@ " + offer.location + " ›"
-						p.accepted="Accepted: " + offer.accepted
-						p.completed="Completed: " + offer.completed 
-					div.small-4.columns.sell_pic
-						p=offer.fb_name
-				a.delete(href="/delete/" + offer._id)="Delete Offer"
-				a.edit(href="/edit/" + offer._id)="Edit Offer"
+				p Nobody has accepted your offers.
+		-}
+	div.row(class="offers")
+		h3="Completed Offers"
+		-var count = 0;
+		-each offer in offers
+			-if (offer.accepted && offer.completed){
+				div.offer.row
+					a(href="/status/" + offer._id)
+						div.columns
+							div.sell_type
+								p=offer.type
+						div.small-8.columns.sell_info
+							p.sell_price="$" + offer.fixedPrice() + " "
+							p.sell_location="@ " + offer.location + " ›"
+							p.accepted="Accepted: " + offer.accepted
+							p.completed="Completed: " + offer.completed 
+						div.small-4.columns.sell_pic
+							p=offer.fb_name
+					a.delete(href="/delete/" + offer._id)="Delete Offer"
+					a.edit(href="/edit/" + offer._id)="Edit Offer"
+				-count ++;
+			-}
+		-if (count == 0){
+			div.offer.row
+				p You have not completed any offers.
+		-}
+

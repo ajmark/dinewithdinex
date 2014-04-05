@@ -38,12 +38,15 @@ exports.user_dashboard = function(req, res){
     if (users.length < 1){
       res.redirect("/404")
     } else {
-      Offer.find({"user_id" : req.params.id}, function(err,offers,count){
-        res.render("../views/dashboard.jade",{
-          title : "User Dashboard",
-          offers : offers
+      Offer.find({"user_id" : req.params.id}, function (err,offers,count){
+         User.findOne({"fb_id" : req.params.id}, function (err, user, count){
+            res.render("../views/dashboard.jade",{
+              title : "User Dashboard",
+              offers : offers,
+              user : user
+            });
+          });
         });
-      });
     };
   });
 };
