@@ -3,7 +3,8 @@ extends layout
 block content
 	div.row
 		div.small-12.columns.page-title
-			h1= "Welcome, " + user.name
+			img.profile-pic(src="http://graph.facebook.com/"+user.fb_id+"/picture?width=60&height=60")
+			h1= "Welcome, " + user.firstName()
 	div.row(class="offers")
 		h3="Pending Offers"
 		-var count = 0;
@@ -11,23 +12,18 @@ block content
 			-if (!offer.accepted && !offer.completed){
 				div.offer.row
 					a(href="/status/" + offer._id)
-						div.columns
-							div.sell_type
-								p=offer.type
-						div.small-8.columns.sell_info
-							p.sell_price="$" + offer.fixedPrice() + " "
-							p.sell_location="@ " + offer.location + " ›"
-							p.accepted="Accepted: " + offer.accepted
-							p.completed="Completed: " + offer.completed 
-						div.small-4.columns.sell_pic
-							p=offer.fb_name
-					a.delete(href="/delete/" + offer._id)="Delete Offer"
-					a.edit(href="/edit/" + offer._id)="Edit Offer"
+						div.small-12.offer-info
+							div.small-7.columns
+								h5="$" + offer.fixedPrice()
+							div.small-5.columns
+								a.tiny.button.action-button(href="/edit/" + offer._id)="Edit"
+								a.tiny.button.secondary.alert.action-button(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
-				p You have not made any offers.
+				div.small-12.columns
+					p You have not made any offers.
 		-}
 	div.row(class="offers")
 		h3="Accepted Offers"
@@ -36,23 +32,18 @@ block content
 			-if (offer.accepted && !offer.completed){
 				div.offer.row
 					a(href="/status/" + offer._id)
-						div.columns
-							div.sell_type
-								p=offer.type
-						div.small-8.columns.sell_info
-							p.sell_price="$" + offer.fixedPrice() + " "
-							p.sell_location="@ " + offer.location + " ›"
-							p.accepted="Accepted: " + offer.accepted
-							p.completed="Completed: " + offer.completed 
-						div.small-4.columns.sell_pic
-							p=offer.fb_name
-					a.delete(href="/delete/" + offer._id)="Delete Offer"
-					a.edit(href="/edit/" + offer._id)="Edit Offer"
+						div.small-12.offer-info
+							div.small-7.columns
+								h5="$" + offer.fixedPrice()
+							div.small-5.columns
+								a.tiny.button.action-button(href="/edit/" + offer._id)="Edit"
+								a.tiny.button.secondary.alert.action-button(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
-				p Nobody has accepted your offers.
+				div.small-12.columns
+					p Nobody has accepted your offers.
 		-}
 	div.row(class="offers")
 		h3="Completed Offers"
@@ -61,22 +52,17 @@ block content
 			-if (offer.accepted && offer.completed){
 				div.offer.row
 					a(href="/status/" + offer._id)
-						div.columns
-							div.sell_type
-								p=offer.type
-						div.small-8.columns.sell_info
-							p.sell_price="$" + offer.fixedPrice() + " "
-							p.sell_location="@ " + offer.location + " ›"
-							p.accepted="Accepted: " + offer.accepted
-							p.completed="Completed: " + offer.completed 
-						div.small-4.columns.sell_pic
-							p=offer.fb_name
-					a.delete(href="/delete/" + offer._id)="Delete Offer"
-					a.edit(href="/edit/" + offer._id)="Edit Offer"
+						div.small-12.offer-info
+							div.small-7.columns
+								h5="$" + offer.fixedPrice()
+							div.small-5.columns
+								a.tiny.button.action-button(href="/edit/" + offer._id)="Edit"
+								a.tiny.button.secondary.alert.action-button(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
-				p You have not completed any offers.
+				div.small-12.columns
+					p You have not completed any offers.
 		-}
 

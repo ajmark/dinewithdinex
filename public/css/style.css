@@ -21,6 +21,7 @@ body {
 
 .page-title {
 	text-align: center;
+	padding-bottom:40px;
 }
 
 /***************************
@@ -35,6 +36,7 @@ body {
 #fb-root {
 	display: block;
 	margin: 0 auto;
+	width:84%;
 }
 
 .fb_login {
@@ -139,3 +141,22 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 	margin-top:25px;
 	border-radius:40px;
 }
+
+/***************************
+** Dashboard  **
+****************************/
+.action-button {
+	float:right;
+}
+
+.profile-pic {
+	border-radius:60px;
+}
+
+/***************************
+** Show Page  **
+****************************/
+.offer-description {
+	padding-bottom: 50px;
+}
+

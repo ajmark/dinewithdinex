@@ -6,4 +6,8 @@ var User = new Schema({
     name : {type: String, require:true}
 });
  
+ User.methods.firstName = function (callback){
+    var name = this.name.split(" ")
+    return name[0]
+ }
 mongoose.model( 'User', User );
