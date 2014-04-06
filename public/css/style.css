@@ -21,7 +21,10 @@ body {
 
 .page-title {
 	text-align: center;
-	padding-bottom:40px;
+}
+
+h3 {
+	padding-top: 40px
 }
 
 /***************************
@@ -106,14 +109,17 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 
 .offer {
 	border-top: 1px solid #ddd;
-	padding-bottom:25px;
 }
 
 .offer:active {
 	background-color:whitesmoke;
 }
 
-.offer:hover {
+.newsfeed {
+	padding-bottom:25px;
+}
+
+.newsfeed:hover {
 	background-color:whitesmoke;
 }
 

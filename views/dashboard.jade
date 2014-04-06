@@ -5,70 +5,89 @@ block content
 		div.small-12.columns.page-title
 			img.profile-pic(src="http://graph.facebook.com/"+user.fb_id+"/picture?width=120&height=120")
 			h1= "Welcome, " + user.firstName()
-	div.row(class="offers")
-		h3="Pending Offers"
-		-var count = 0;
-		-each offer in offers
-			-if (!offer.accepted && !offer.completed){
-				div.offer.row
-					a(href="/status/" + offer._id)
-						div.small-12.offer-info
-							div.small-7.columns
-								h5="$" + offer.fixedPrice()
-								div.sell_type=offer.type
-								h5=" @ " + offer.location
-							div.small-5.columns
-								a.tiny.button.action-button(href="/edit/" + offer._id)="Edit"
-								a.tiny.button.secondary.alert.action-button(href="/delete/" + offer._id)="Delete"
-				-count ++;
-			-}
-		-if (count == 0){
-			div.offer.row
-				div.small-12.columns
-					p You have not made any offers.
-		-}
+
 	div.row(class="offers")
 		h3="Accepted Offers"
 		-var count = 0;
 		-each offer in offers
 			-if (offer.accepted && !offer.completed){
 				div.offer.row
-					a(href="/status/" + offer._id)
-						div.small-12.offer-info
-							div.small-7.columns
-								h5="$" + offer.fixedPrice()
-								div.sell_type=offer.type
-								h5=" @ " + offer.location
-							div.small-5.columns
-								a.tiny.button.action-button(href="/edit/" + offer._id)="Edit"
-								a.tiny.button.secondary.alert.action-button(href="/delete/" + offer._id)="Delete"
+					div.small-12.offer-info
+						div.small-12.columns
+							h5="$" + offer.fixedPrice()
+							div.sell_type=offer.type
+							h5=" @ " + offer.location
+					row
+						div.small-12.columns
+							div.button-bar.action-button
+								ul.button-group
+									li
+										a.tiny.button(href="/edit/" + offer._id)="Edit"
+									li
+										a.tiny.button.success(href="/offer_status/" + offer._id)="View Status"
+									li
+										a.tiny.button.secondary.alert(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
-				div.small-12.columns
+				div.small-12.columns.offer-info
 					p Nobody has accepted your offers.
 		-}
+
+	div.row(class="offers")
+		h3="Pending Offers"
+		-var count = 0;
+		-each offer in offers
+			-if (!offer.accepted && !offer.completed){
+				div.offer.row
+					div.small-12.offer-info
+						div.small-12.columns
+							h5="$" + offer.fixedPrice()
+							div.sell_type=offer.type
+							h5=" @ " + offer.location
+					row
+						div.small-12.columns
+							div.button-bar.action-button
+								ul.button-group
+									li
+										a.tiny.button(href="/edit/" + offer._id)="Edit"
+									li
+										a.tiny.button.secondary.alert(href="/delete/" + offer._id)="Delete"
+				-count ++;
+			-}
+		-if (count == 0){
+			div.offer.row
+				div.small-12.columns.offer-info
+					p You have not made any offers.
+		-}
+
 	div.row(class="offers")
 		h3="Completed Offers"
 		-var count = 0;
 		-each offer in offers
 			-if (offer.accepted && offer.completed){
 				div.offer.row
-					a(href="/status/" + offer._id)
-						div.small-12.offer-info
-							div.small-7.columns
-								h5="$" + offer.fixedPrice()
-								div.sell_type=offer.type
-								h5=" @ " + offer.location
-							div.small-5.columns
-								a.tiny.button.action-button(href="/edit/" + offer._id)="Edit"
-								a.tiny.button.secondary.alert.action-button(href="/delete/" + offer._id)="Delete"
+					div.small-12.offer-info
+						div.small-12.columns
+							h5="$" + offer.fixedPrice()
+							div.sell_type=offer.type
+							h5=" @ " + offer.location
+					row
+						div.small-12.columns
+							div.button-bar.action-button
+								ul.button-group
+									li
+										a.tiny.button(href="/edit/" + offer._id)="Edit"
+									li
+										a.tiny.button.success(href="/offer_status/" + offer._id)="View Status"
+									li
+										a.tiny.button.secondary.alert(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
-				div.small-12.columns
+				div.small-12.columns.offer-info
 					p You have not completed any offers.
 		-}
 
