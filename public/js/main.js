@@ -124,7 +124,8 @@ function getFoursquareLocations() {
     "&oauth_token="+token+"&v=20140327"
   }).done(function(data){
     for (i=0; i < data.response.venues.length-1; i++) {
-      $("select[name='location']").append("<option value=" + data.response.venues[i].name + ">"+ data.response.venues[i].name +"</option>")
+      var venue = data.response.venues[i].name
+      $("select[name='location']").append("<option value='" + venue + "'>"+ venue +"</option>")
     };
   });
 }
