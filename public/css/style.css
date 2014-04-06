@@ -113,6 +113,10 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 	background-color:whitesmoke;
 }
 
+.offer:hover {
+	background-color:whitesmoke;
+}
+
 .offer a:active {
 	color:blue;
 }

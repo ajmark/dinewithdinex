@@ -16,6 +16,7 @@ html
     script(type='text/javascript' src="/js/main.js")
     script(type='text/javascript' src="/js/jquery.formatCurrency-1.4.0.min.js")
     script(type='text/javascript' src='/js/fb_login.js')
+    script(type='text/javascript' src='/js/jquery.maskedInput.js')
     meta(name="viewport" content="width=device-width")
 
     script(type='text/javascript').
@@ -26,6 +27,7 @@ html
             $('.currency').blur(function() {
                 $('.currency').formatCurrency();
             });
+            $("input[name='contact_info']").mask("(999) 999-999")
         });
   body
     //- Navbar
