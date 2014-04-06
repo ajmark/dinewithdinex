@@ -3,16 +3,15 @@ extends layout
 
 block content
     div.row
-        div.small-12.columns.page-title
-            h1= "Offer Status"
-        div.row.status-info
-        - if (offer.accepted === false){
-            div.offer.row
-                p Nobody has accepted this offer yet.
-        -} else {
-            div.offer.row
-                p= offer.buyer_name + " has accepted your offer"
-                a(onclick="rejectOffer()")= "Reject this offer"
-                br
-                a(onclick="completeOffer()")= "Complete this offer"
-        -}
+        div.small-12.columns.profile-pic.page-title
+            img.profile-pic(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=120&height=120")
+            h2=offer.buyer_name + " has accepted your offer!"
+    div.row
+        div.small-12.columns
+            div.button-bar.status-buttons
+                ul.button-group
+                    li
+                        a.button.small.success.status-action(onclick="completeOffer()")= "Complete with Venmo"
+                    li 
+                        a.button.small.alert.status-action(onclick="rejectOffer()")= "Reject"
+                        

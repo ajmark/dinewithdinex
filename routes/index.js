@@ -150,7 +150,7 @@ exports.update_offer = function (req,res){
 //Delete
 exports.delete_offer = function (req,res){
   Offer.findOneAndRemove({'_id' : req.params.id}, function (err,offer){
-    res.redirect('/newsfeed');
+    res.redirect('/dashboard/' + offer.user_id);
   });
 };
 

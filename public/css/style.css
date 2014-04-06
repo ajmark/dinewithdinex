@@ -20,7 +20,13 @@ body {
 }
 
 .page-title {
+	padding-top:20px;
 	text-align: center;
+}
+
+h2 {
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 h3 {
@@ -111,12 +117,12 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 	border-top: 1px solid #ddd;
 }
 
-.offer:active {
-	background-color:whitesmoke;
-}
-
 .newsfeed {
 	padding-bottom:25px;
+}
+
+.newsfeed:active {
+	background-color:whitesmoke;
 }
 
 .newsfeed:hover {
@@ -168,5 +174,19 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 ****************************/
 .offer-description {
 	padding-bottom: 50px;
+}
+
+/***************************
+** Status Page  **
+****************************/
+.status-buttons {
+	display:table;
+	margin:0 auto;
+	padding-top: 40px;
+}
+
+.status-action {
+	display:table-cell;
+	margin:0 auto;
 }
 
