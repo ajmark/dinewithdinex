@@ -12,10 +12,8 @@ var express = require('express')
   , path = require('path')
   , mongoose = require('mongoose')
   , passport = require('passport')
-  , FacebookStrategy = require('passport-facebook').Strategy;
-
-var FACEBOOK_APP_ID = '288659191291603';
-var FACEBOOK_APP_SECRET = '8cf0f1e3a9bd26ffce42b1e4a299b4ac';
+  , FacebookStrategy = require('passport-facebook').Strategy
+  , config = require('./oauth.js');
 
 var app = express();
 
@@ -35,12 +33,9 @@ app.configure(function(){
 });
 
 passport.use(new FacebookStrategy({
-  clientID: FACEBOOK_APP_ID,
-  clientSecret: FACEBOOK_APP_SECRET,
-  //needs to be changed for localhots and heroku
-  //localhost:3333
-  //dinewithdinex.herokuapp.com
-  callbackURL: 'http://dinewithdinex.herokuapp.com/auth/facebook/callback'
+  clientID: config.facebook.clientID,
+  clientSecret: config.facebook.clientSecret,
+  callbackURL: config.facebook.callbackURL
 }, function(accessToken, refreshToken, profile, done) {
   process.nextTick(function() {
     //Assuming user exists
