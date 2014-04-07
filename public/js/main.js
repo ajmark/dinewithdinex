@@ -117,13 +117,7 @@ function completeOffer() {
     type: "post",
     url: "/update/"+id,
     data : JSON.stringify(data),
-    contentType: "application/json",
-    success: function(){
-      directToDashboard();
-    },
-    error: function(){
-      window.location.href = "/404"
-    }
+    contentType: "application/json"
   })
 }
 

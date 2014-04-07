@@ -35,7 +35,6 @@ exports.logout = function(req,res){
 //Venmo Routes
 exports.venmo = function (req,res){
   res.render("../views/payment_success")
-  console.log(req.url)
 }
 
 //Dashboard Route
