@@ -7,7 +7,31 @@ block content
 			h1= "Welcome, " + user.firstName()
 
 	div.row(class="offers")
-		h3="Accepted Offers"
+		h3="Purchases"
+		-var count = 0;
+		-each purchase in purchases
+			div.offer.row
+				div.small-12.offer-info
+					div.small-12.columns
+						h5="$" + purchase.fixedPrice()
+						div.sell_type=purchase.type
+						h5=" @ " + purchase.location
+				row
+					div.small-12
+						div.button-bar.action-button
+							ul.button-group
+								li
+									a.small.radius.button.success(href="/purchase_status/" + purchase._id)="View Status"
+			-count ++;
+		-if (count == 0){
+			div.offer.row
+				div.small-12.columns.offer-info
+					p 
+						i Your have not purchased anything.
+		-}
+
+	div.row(class="offers")
+		h3="Transactions Awaiting Approval"
 		-var count = 0;
 		-each offer in offers
 			-if (offer.accepted && !offer.completed){
@@ -18,7 +42,7 @@ block content
 							div.sell_type=offer.type
 							h5=" @ " + offer.location
 					row
-						div.small-12.columns
+						div.small-12
 							div.button-bar.action-button
 								ul.button-group
 									li
@@ -37,7 +61,7 @@ block content
 		-}
 
 	div.row(class="offers")
-		h3="Pending Offers"
+		h3="Pending Transactions"
 		-var count = 0;
 		-each offer in offers
 			-if (!offer.accepted && !offer.completed){
@@ -48,7 +72,7 @@ block content
 							div.sell_type=offer.type
 							h5=" @ " + offer.location
 					row
-						div.small-12.columns
+						div.small-12
 							div.button-bar.action-button
 								ul.button-group
 									li
@@ -65,7 +89,7 @@ block content
 		-}
 
 	div.row(class="offers")
-		h3="Completed Offers"
+		h3="Completed Transactions"
 		-var count = 0;
 		-each offer in offers
 			-if (offer.accepted && offer.completed){
@@ -76,15 +100,11 @@ block content
 							div.sell_type=offer.type
 							h5=" @ " + offer.location
 					row
-						div.small-12.columns
+						div.small-12
 							div.button-bar.action-button
 								ul.button-group
 									li
-										a.small.radius.button(href="/edit/" + offer._id)="Edit"
-									li
 										a.small.radius.button.success(href="/status/" + offer._id)="View Status"
-									li
-										a.small.radius.button.secondary.alert(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){

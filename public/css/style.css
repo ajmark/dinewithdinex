@@ -33,6 +33,9 @@ h3 {
 	padding-top: 40px
 }
 
+i {
+	color:gray;
+}
 /***************************
 ** Splash Page **
 ****************************/
@@ -50,6 +53,12 @@ h3 {
 
 .fb_login {
 
+}
+
+.intro {
+	padding-top: 10%;
+	padding-left:10%;
+	max-width:500px !important;
 }
 
 /***************************
