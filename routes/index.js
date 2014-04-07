@@ -32,6 +32,12 @@ exports.logout = function(req,res){
   res.redirect("/");
 };
 
+//Venmo Routes
+exports.venmo = function (req,res){
+  res.render("../views/payment_success")
+  console.log(req.url)
+}
+
 //Dashboard Route
 exports.user_dashboard = function(req, res){
   User.find({"fb_id" : req.params.id}, function (err, users, count){
@@ -39,13 +45,16 @@ exports.user_dashboard = function(req, res){
       res.redirect("/404")
     } else {
       Offer.find({"user_id" : req.params.id}, function (err,offers,count){
-         User.findOne({"fb_id" : req.params.id}, function (err, user, count){
-            res.render("../views/dashboard.jade",{
-              title : "User Dashboard",
-              offers : offers,
-              user : user
-            });
+        Offer.find({"buyer_id" : req.params.id}, function (err,purchases,count){
+          User.findOne({"fb_id" : req.params.id}, function (err, user, count){
+             res.render("../views/dashboard.jade",{
+               title : "User Dashboard",
+               offers : offers,
+               purchases : purchases,
+               user : user
+             });
           });
+         });
         });
     };
   });
@@ -56,6 +65,19 @@ exports.show_status = function(req,res){
     if(!err){
       res.render("../views/offer_status.jade",{
         title:"Show Offer Status",
+        offer : offer
+      });
+    } else {
+      res.redirect("/404")
+    };
+  });
+};
+
+exports.show_pstatus = function(req,res){
+  Offer.findOne({"_id" : req.params.id},function (err,offer){
+    if(!err){
+      res.render("../views/purchase_status.jade",{
+        title:"Show Purchase Status",
         offer : offer
       });
     } else {

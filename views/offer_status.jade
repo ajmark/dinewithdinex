@@ -16,7 +16,9 @@ block content
                 div.button-bar.status-buttons
                     ul.button-group
                         li.status-action
-                            a.button.small.radius.success(onclick="completeOffer()")= "Complete with Venmo"
+                            a.button.small.radius.success(href="https://api.venmo.com/v1/oauth/authorize?client_id=1678&scope=make_payments%20access_profile")= "Complete with Venmo"
                         li.status-action
                             a.button.small.radius.alert(onclick="rejectOffer()")= "Reject"
+    div.row.columns
+            a.button.radius.tiny.secondary(href="/dashboard/" + offer.user_id)="Go Back"
                         

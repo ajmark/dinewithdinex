@@ -31,11 +31,25 @@ html
             ul.title-area
                 li.name
                     h1
-                        a(href="/") Dine With DineX
+                        a(href="/") Dine With Dine
+                            span(style="color:#e74c3c;font-weight:700") X
     div.row.content
-      div.small-12.columns
-          img.logo-lrg(src="/assets/logo.png")
-          div(id="fb-root")
-              //- fb:login-button.fb_login(show-faces="true", width="200", max-rows="1", data-size="xlarge")
-              a(href="/auth/facebook"): img.fb_login(src="/assets/fb_login/active_600@2x.png")    
+      div.row
+        div.small-12.columns
+            img.logo-lrg(src="/assets/logo.png")
+            div(id="fb-root")
+                //- fb:login-button.fb_login(show-faces="true", width="200", max-rows="1", data-size="xlarge")
+                a(href="/auth/facebook"): img.fb_login(src="/assets/fb_login/active_600@2x.png")    
+      div.row.intro
+        h5 Welcome to Dine With Dine
+          span(style="color:#961e1f") X
+        br
+        p This app allows Carnegie Mellon Students to turn their leftover DineX and Meal Blocks into extra 
+          span(style="color:green")$$$
+          |.
+        br
+        p 
+          | Simply log in with 
+          span(style="color:#4c66a4") Facebook 
+          | to begin buying and selling on the marketplace! Make sure you have a Venmo account.
 
