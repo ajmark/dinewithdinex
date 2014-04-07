@@ -9,15 +9,15 @@ block content
 		- if (offers == false){
 			div.offer.row
 				div.small-12.columns.offer-info
-				p There are no offers at this time. 
+				p There are no available offers at this time. 
 		-} else {
 		- 	for (var i= offers.length-1, offer= offers[i]; i >= 0;  i--, offer=offers[i]) {
 				div.offer.newsfeed.row
 					a(href="/offer/" + offer._id)
-						div.small-12.columns
+						div.small-12
 							img.profile-thumbnail(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=80&height=80")
 							div.small-8.columns.offer-info
-								div.small-12.columns
+								div.small-12
 									h4="$"+offer.fixedPrice()
 										span.sell_type=offer.type
 									
