@@ -35,7 +35,7 @@ exports.logout = function(req,res){
 //Dashboard Route
 exports.user_dashboard = function(req, res){
   User.find({"fb_id" : req.params.id}, function (err, users, count){
-    if (users.length < 1){
+    if (users == undefined || users.length < 1){
       res.redirect("/404")
     } else {
       Offer.find({"user_id" : req.params.id}, function (err,offers,count){
@@ -143,7 +143,7 @@ exports.get_edit_form = function (req,res){
 
 exports.update_offer = function (req,res){
   Offer.findOneAndUpdate({'_id' : req.params.id},req.body, function (err,offer){
-    res.redirect('/dashboard/' + req.body.user_id )
+    res.redirect('/dashboard/' + req.body.user_id)
   });
 };
 

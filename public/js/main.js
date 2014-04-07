@@ -70,15 +70,18 @@ function acceptOffer() {
     buyer_id : getCookie("fb_id"),
     buyer_name : getCookie("fb_name")
   }
-  directToDashboard();
   $.ajax({
     type: "post",
     url: "/update/"+id,
     data: JSON.stringify(data),
-    contentType: "application/json"
-  }).done(function(){
-    directToDashboard();
-  });
+    contentType: "application/json",
+    success: function(){
+      directToDashboard();
+    },
+    error: function(){
+      window.location.href = "/404"
+    }
+  })
 }
  
 function rejectOffer() {
@@ -93,10 +96,14 @@ function rejectOffer() {
     type: "post",
     url: "/update/"+id,
     data: JSON.stringify(data),
-    contentType: "application/json"
-  }).done(function(){
+    contentType: "application/json",
+    success: function(){
       directToDashboard();
-  });
+    },
+    error: function(){
+      window.location.href = "/404"
+    }
+  })
 } 
 
 function completeOffer() {
@@ -110,10 +117,14 @@ function completeOffer() {
     type: "post",
     url: "/update/"+id,
     data : JSON.stringify(data),
-    contentType: "application/json"
-  }).done(function(){
-    directToDashboard();
-  });
+    contentType: "application/json",
+    success: function(){
+      directToDashboard();
+    },
+    error: function(){
+      window.location.href = "/404"
+    }
+  })
 }
 
 function getFoursquareLocations() {

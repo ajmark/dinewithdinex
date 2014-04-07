@@ -22,17 +22,18 @@ block content
 							div.button-bar.action-button
 								ul.button-group
 									li
-										a.tiny.button(href="/edit/" + offer._id)="Edit"
+										a.small.radius.button(href="/edit/" + offer._id)="Edit"
 									li
-										a.tiny.button.success(href="/status/" + offer._id)="View Status"
+										a.small.radius.button.success(href="/status/" + offer._id)="View Status"
 									li
-										a.tiny.button.secondary.alert(href="/delete/" + offer._id)="Delete"
+										a.small.radius.button.secondary.alert(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
 				div.small-12.columns.offer-info
-					p Nobody has accepted your offers.
+					p 
+						i Nobody has accepted your offers.
 		-}
 
 	div.row(class="offers")
@@ -51,15 +52,16 @@ block content
 							div.button-bar.action-button
 								ul.button-group
 									li
-										a.tiny.button(href="/edit/" + offer._id)="Edit"
+										a.small.radius.button(href="/edit/" + offer._id)="Edit"
 									li
-										a.tiny.button.secondary.alert(href="/delete/" + offer._id)="Delete"
+										a.small.radius.button.secondary.alert(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
 				div.small-12.columns.offer-info
-					p You have not made any offers.
+					p 
+						i You have not made any offers.
 		-}
 
 	div.row(class="offers")
@@ -78,16 +80,17 @@ block content
 							div.button-bar.action-button
 								ul.button-group
 									li
-										a.tiny.button(href="/edit/" + offer._id)="Edit"
+										a.small.radius.button(href="/edit/" + offer._id)="Edit"
 									li
-										a.tiny.button.success(href="/offer_status/" + offer._id)="View Status"
+										a.small.radius.button.success(href="/status/" + offer._id)="View Status"
 									li
-										a.tiny.button.secondary.alert(href="/delete/" + offer._id)="Delete"
+										a.small.radius.button.secondary.alert(href="/delete/" + offer._id)="Delete"
 				-count ++;
 			-}
 		-if (count == 0){
 			div.offer.row
 				div.small-12.columns.offer-info
-					p You have not completed any offers.
+					p 
+						i You have not completed any offers.
 		-}
 

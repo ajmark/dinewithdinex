@@ -188,5 +188,6 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 .status-action {
 	display:table-cell;
 	margin:0 auto;
+	padding-top: 5px;
 }
 

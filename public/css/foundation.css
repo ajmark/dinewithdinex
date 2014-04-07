@@ -1637,6 +1637,7 @@ button, .button {
     clear: both; }
   .button-group li {
     margin: 0;
+    padding-left:3px;
     float: left; }
     .button-group li > button, .button-group li .button {
       border-left: 1px solid;
@@ -1748,6 +1749,7 @@ button, .button {
       width: 100%; }
 
 .button-bar {
+  padding-top:15px;
   *zoom: 1; }
   .button-bar:before, .button-bar:after {
     content: " ";

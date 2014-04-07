@@ -5,13 +5,18 @@ block content
     div.row
         div.small-12.columns.profile-pic.page-title
             img.profile-pic(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=120&height=120")
-            h2=offer.buyer_name + " has accepted your offer!"
+            -if (!offer.completed) {
+                h2=offer.buyer_name + " has accepted your offer!"
+            -} else {
+                h2="You have completed your offer with " + offer.buyer_name
+            -}
     div.row
-        div.small-12.columns
-            div.button-bar.status-buttons
-                ul.button-group
-                    li
-                        a.button.small.success.status-action(onclick="completeOffer()")= "Complete with Venmo"
-                    li 
-                        a.button.small.alert.status-action(onclick="rejectOffer()")= "Reject"
+        div.small-12
+            -if (!offer.completed)
+                div.button-bar.status-buttons
+                    ul.button-group
+                        li.status-action
+                            a.button.small.radius.success(onclick="completeOffer()")= "Complete with Venmo"
+                        li.status-action
+                            a.button.small.radius.alert(onclick="rejectOffer()")= "Reject"
                         
