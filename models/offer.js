@@ -49,13 +49,16 @@ Offer.methods.formatDate = function(callback) {
 Offer.methods.formatTime = function(callback) {
 	//puts the time in 12 hour format
 	if (this.created.getHours() === 0){
-		var hour = 12; 
+		var hour = 12;
+                          var suffix = "AM" 
 	}
 	else if (this.created.getHours() > 12){
 		var hour = this.created.getHours() % 12;
+                          var suffix = "PM"
 	}
 	else {
 		var hour = this.created.getHours();
+                          var suffix = "AM"
 	}
 
 	//sets the time in hh:mm format
@@ -63,10 +66,14 @@ Offer.methods.formatTime = function(callback) {
 		var minute = "0" + this.created.getMinutes();
 	}
 	else {
-		var minute = this.created.getHours();
+		var minute = this.created.getMinutes();
 	}
+	return hour + ":" + minute + " " + suffix; 
+}
 
-	return hour + ":" + minute; 
+Offer.methods.firstName = function (callback){
+   var name = this.fb_name.split(" ")
+   return name[0]
 }
 
 mongoose.model( 'Offer', Offer );

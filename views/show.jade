@@ -7,16 +7,22 @@ block content
             img.profile-pic(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=120&height=120")
             h1=offer.fb_name
     div.row
-        div.small-12.columns.offer-description
-            p="Wants to sell " + offer.type +" at $" + offer.fixedPrice() + "."
-            p=offer.fb_name + " is currently located at " + offer.location + "."
-            p="The offer will expire in " + offer.expiration + " hours."
-            p="You can reach " + offer.fb_name + " at " + offer.contact_info
+        div.small-10.medium-6.columns.offer-description.small-centered
+            -if (offer.type==="DineX"){
+                p="Is selling " + offer.type +" at $" + offer.fixedPrice()
+            -} else 
+                p="Is selling a " + offer.type +" for $" + offer.fixedPrice()
+            br
+            p=offer.firstName() + " will meet you at " + offer.location
+            br
+            p="Here is " + offer.firstName() + "'s phone number: " + offer.contact_info
+            br
             p="This offer was made on " + offer.formatDate() + " at " + offer.formatTime()
 
     div.row
-        div.small-12.columns
-            a.radius.button(onclick="acceptOffer()")="I want to accept this offer!"
-    div.row
-        div.small-12.columns
-            a.button.radius.tiny.secondary(href="/newsfeed")="Go Back"
+        div.button-bar.status-buttons
+            ul.button-group 
+                li.status-action
+                    a.button.radius.small.secondary(href="/newsfeed")="Go Back"
+                li.status-action
+                    a.radius.small.button(onclick="acceptOffer()")="I want to accept this offer!"

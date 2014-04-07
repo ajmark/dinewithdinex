@@ -14,8 +14,9 @@ block content
 				div.small-12.offer-info
 					div.small-12.columns
 						h5="$" + purchase.fixedPrice()
-						div.sell_type=purchase.type
+							span.sell_type=purchase.type
 						h5=" @ " + purchase.location
+						h6=purchase.formatDate() + " | " + purchase.formatTime()
 				row
 					div.small-12
 						div.button-bar.action-button
@@ -39,8 +40,9 @@ block content
 					div.small-12.offer-info
 						div.small-12.columns
 							h5="$" + offer.fixedPrice()
-							div.sell_type=offer.type
+								span.sell_type=offer.type
 							h5=" @ " + offer.location
+							h6=offer.formatDate() + " | " + offer.formatTime()
 					row
 						div.small-12
 							div.button-bar.action-button
@@ -69,8 +71,9 @@ block content
 					div.small-12.offer-info
 						div.small-12.columns
 							h5="$" + offer.fixedPrice()
-							div.sell_type=offer.type
+								span.sell_type=offer.type
 							h5=" @ " + offer.location
+							h6=offer.formatDate() + " | " + offer.formatTime()
 					row
 						div.small-12
 							div.button-bar.action-button
@@ -97,8 +100,9 @@ block content
 					div.small-12.offer-info
 						div.small-12.columns
 							h5="$" + offer.fixedPrice()
-							div.sell_type=offer.type
+								span.sell_type=offer.type
 							h5=" @ " + offer.location
+							h6=offer.formatDate() + " | " + offer.formatTime()
 					row
 						div.small-12
 							div.button-bar.action-button

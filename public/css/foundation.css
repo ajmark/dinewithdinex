@@ -1538,7 +1538,7 @@ button, .button {
   button.small, .button.small {
     padding-top: 0.7rem;
     padding-right: 1.5rem;
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.7rem;
     padding-left: 1.5rem;
     font-size: 0.8125rem;
     /*     @else                            { font-size: $padding - rem-calc(2); } */ }

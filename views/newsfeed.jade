@@ -17,11 +17,14 @@ block content
 						div.small-12.columns
 							img.profile-thumbnail(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=80&height=80")
 							div.small-8.columns.offer-info
-								div.small-8.columns
-									h4=offer.fb_name
-								div.small-4.columns
-									h6="$"+offer.fixedPrice()
-									div.sell_type=offer.type
+								div.small-12.columns
+									h4="$"+offer.fixedPrice()
+										span.sell_type=offer.type
+									
+									h4=" @ " + offer.location
+									h6=offer.formatDate() + " | " + offer.formatTime()
+									h6
+										i=offer.fb_name
 		-	}
 		- }
 			

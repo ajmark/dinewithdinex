@@ -144,18 +144,16 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 
 .offer-info {
 	padding-top:30px;
-	float:right;
 }
 
 .sell_type {
-	float: left;
-	display: inline-block;
 	color: white;
 	background-color: #961E1F;
 	border-radius: 4px;
-	padding: 2px 4px;
-	margin: 4px 10px 0px 0px;
+	padding: 2px 10px;
+	margin: 3px 10px 0px 10px;
 	clear: both;
+	font-size:80%;
 }
 
 .sell_type * {
@@ -183,6 +181,7 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 ****************************/
 .offer-description {
 	padding-bottom: 50px;
+	padding-left:30px;
 }
 
 /***************************
