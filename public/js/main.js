@@ -118,7 +118,9 @@ function completeOffer() {
     url: "/update/"+id,
     data : JSON.stringify(data),
     contentType: "application/json"
-  })
+  }).done(function(data){
+    window.location.href = "https://api.venmo.com/v1/oauth/authorize?client_id=1678&scope=make_payments%20access_profile";
+  });
 }
 
 function getFoursquareLocations() {
