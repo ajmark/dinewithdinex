@@ -14,7 +14,10 @@ block content
 				div.small-12.offer-info
 					div.small-12.columns
 						h5="$" + purchase.fixedPrice()
-							span.sell_type=purchase.type
+							if (purchase.type == "Block")
+								span.sell_type.sell_block=purchase.type
+							else
+								span.sell_type=purchase.type
 						h5=" @ " + purchase.location
 						h6=purchase.formatDate() + " | " + purchase.formatTime()
 				row
@@ -40,7 +43,10 @@ block content
 					div.small-12.offer-info
 						div.small-12.columns
 							h5="$" + offer.fixedPrice()
-								span.sell_type=offer.type
+								if (offer.type == "Block")
+									span.sell_type.sell_block=offer.type
+								else
+									span.sell_type=offer.type
 							h5=" @ " + offer.location
 							h6=offer.formatDate() + " | " + offer.formatTime()
 					row
@@ -71,7 +77,10 @@ block content
 					div.small-12.offer-info
 						div.small-12.columns
 							h5="$" + offer.fixedPrice()
-								span.sell_type=offer.type
+								if (offer.type == "Block")
+									span.sell_type.sell_block=offer.type
+								else
+									span.sell_type=offer.type
 							h5=" @ " + offer.location
 							h6=offer.formatDate() + " | " + offer.formatTime()
 					row
