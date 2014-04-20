@@ -13,7 +13,8 @@ var express = require('express')
   , mongoose = require('mongoose')
   , passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
-  , config = require('./oauth.js');
+  , config = require('./oauth.js')
+  , expressValidator = require('express-validator');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
+  app.use(expressValidator());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(passport.initialize());
