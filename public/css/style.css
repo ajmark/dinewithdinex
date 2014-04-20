@@ -107,11 +107,13 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 .expiration-input {
 	margin-top:15px;
 	padding-left:15px;
+	padding-right:15px;
 }
 
 .location-input {
 	margin-top:15px;
 	padding-right:15px;
+	padding-left:15px;
 }
 
 /***************************
