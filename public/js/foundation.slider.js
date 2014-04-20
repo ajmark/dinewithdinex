@@ -7,9 +7,9 @@
     version : '5.2.2',
 
     settings: {
-      start: 0,
+      start: 0.5,
       end: 100,
-      step: 1,
+      step: 0.5,
       initial: null,
       display_selector: '',
       on_change: function(){}
