@@ -27,13 +27,11 @@ block content
 				div.row
 					div.small-12.columns
 						div.expiration-input
-							label Expires in...
-								select(name="expiration")
-									option(value="",disabled selected) Select hours
-									option(value="1") One Hour
-									option(value="2") Two Hours
-									option(value="3") Three Hours
-									option(value="4") Four Hours
+							label(id="expiration-label") Time
+							div.range-slider.radius(data-slider, id="expiration-slider", data-options="end: 4;")
+								span.range-slider-handle
+								span.range-slider-active-segment
+								input(type="hidden", name="expiration")
 					div.small-12.columns
 						div.location-input
 							label Pick Location...
@@ -48,5 +46,7 @@ block content
 			document.getElementsByName("fb_name")[0].value = getCookie("fb_name")
 			getFoursquareLocations()
 		});
-
-
+		$('[data-slider]').on('change', function(){
+			$('#expiration-label').text("Expires in... " + $('#expiration-slider').attr('data-slider') + " Hours");
+		});
+		
