@@ -137,5 +137,20 @@ function getFoursquareLocations() {
   });
 }
 
+function getLocations() {
+  locs = ["Asiana", "Carnegie Mellon Cafe", "City Grill", "Creperie", "Downtown Deli", "El Gallo de Oro",
+          "Entropy", "eVgefstos", "The Exchange", "Gingers Express", "Heinz Cafe", "La Prima Espresso", 
+          "The Maggie Murph Cafe", "Mitchell's Mainstreet Marketplace", "Nakama Express", "Pasta Villagio",
+          "The Pomegranate", "Schatz Dining Room", "Skibo Cafe", "Spice It Up Grill", "Spinning Salads", 
+          "Stackers", "Take Comfort", "Tartans Pavilion", "Taste of India", "Tazza d' Oro", "The Underground",
+          "Worlds of Flavor", "The Zebra Lounge"
+  ]
+
+  for (i=0; i < locs.length; i++) {
+    var venue = locs[i]
+    $("select[name='location']").append("<option value='" + venue + "'>"+ venue +"</option>")    
+  }
+}
+
 
 
