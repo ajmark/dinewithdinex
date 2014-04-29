@@ -122,7 +122,7 @@ function completeOffer() {
     window.location.href = "https://api.venmo.com/v1/oauth/authorize?client_id=1678&scope=make_payments%20access_profile";
   });
 }
-
+/*
 function getFoursquareLocations() {
   var token = "5WPVOYU45PPZMBSF4Y3LNOHQQZGO0QP2I4G1FWIVMTKKBDMS"
   $.ajax({
@@ -136,19 +136,39 @@ function getFoursquareLocations() {
     };
   });
 }
-
+*/
 function getLocations() {
-  locs = ["Asiana", "Carnegie Mellon Cafe", "City Grill", "Creperie", "Downtown Deli", "El Gallo de Oro",
+ /* locs = ["Asiana", "Carnegie Mellon Cafe", "City Grill", "Creperie", "Downtown Deli", "El Gallo de Oro",
           "Entropy", "eVgefstos", "The Exchange", "Gingers Express", "Heinz Cafe", "La Prima Espresso", 
           "The Maggie Murph Cafe", "Mitchell's Mainstreet Marketplace", "Nakama Express", "Pasta Villagio",
           "The Pomegranate", "Schatz Dining Room", "Skibo Cafe", "Spice It Up Grill", "Spinning Salads", 
           "Stackers", "Take Comfort", "Tartans Pavilion", "Taste of India", "Tazza d' Oro", "The Underground",
           "Worlds of Flavor", "The Zebra Lounge"
   ]
+*/
+
+locs = ["Resnik House", "Carnegie Mellon Cafe",  "Nakama Express", "Spice It Up Grill", "Stackers",
+        "Take Comfort", "Tartans Pavilion", "Taste of India", "Worlds of Flavor",
+        
+        "Newell-Simon Hall", "Asiana", "Mitchell's Mainstreet Marketplace",
+        
+        "University Center", "City Grill", "Creperie", "Downtown Deli", "El Gallo de Oro",
+        "Entropy", "eVgefstos", "Pasta Villagio", "The Pomegranate", "Schatz Dining Room", "Skibo Cafe",
+        "Spinning Salads",
+        
+        "Other", "The Exchange", "Gingers Express", "Heinz Cafe", "La Prima Espresso", "The Maggie Murph Cafe",  
+        "Tazza d' Oro", "The Underground", "The Zebra Lounge"
+  ]
+
 
   for (i=0; i < locs.length; i++) {
     var venue = locs[i]
-    $("select[name='location']").append("<option value='" + venue + "'>"+ venue +"</option>")    
+    if ((i == 0) || (i==9) || (i==12) || (i==24)) {
+      $("select[name='location']").append("<option value='', disabled>"+ venue +"</option>")    
+    }
+    else {
+      $("select[name='location']").append("<option value='" + venue + "'>"+ venue +"</option>")    
+    }
   }
 }
 
