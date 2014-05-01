@@ -7,7 +7,7 @@ block content
 		div.small-12.columns.page-title
 			h1 Share My Wealth
 	div.row 
-		form(method="post", action="/create")
+		form(method="post", action="/create" onsubmit="return validateForm()" name="createForm")
 			fieldset
 				legend Create a New Offer
 				div.row
@@ -18,12 +18,15 @@ block content
 							label(for="select_mealblock") Block
 							input(type="radio", name="meal_type",value="DineX", id="select_dinex")
 							label(for="select_dinex") DineX
+						div(hidden, id = "mealError") Please select a meal type
 				div.small-12.columns
 					div.currency-input
 						input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
+						div(hidden, id="priceError") Please enter a price
 				div.small-12.columns
 					div.contact-input
 						input(type="textfield",placeholder="Phone Number",name="contact_info")
+						div(hidden, id = "phoneError") Please enter a phone number
 				div.row
 					div.small-12.columns
 						div.expiration-input
@@ -50,4 +53,25 @@ block content
 		$('[data-slider]').on('change', function(){
 			$('#expiration-label').text("Expires in... " + $('#expiration-slider').attr('data-slider') + " Hours");
 		});
-		
+
+		function validateForm(){
+			var contact_info=document.forms["createForm"]["contact_info"].value;
+			var price = document.forms["createForm"]["price"].value; 
+
+			if (!($('input[type=radio]:checked').size() > 0)){
+				$("#mealError").fadeIn();
+				return false;				
+			}
+
+			if (price==null || price==""){
+				$("#priceError").fadeIn();
+				return false; 
+			}
+
+			if (contact_info==null || contact_info==""){
+				$("#phoneError").fadeIn(); 
+				return false;
+			}
+
+
+		};
