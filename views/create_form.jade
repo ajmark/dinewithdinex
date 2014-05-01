@@ -44,7 +44,8 @@ block content
 		$(document).ready(function(){
 			document.getElementsByName("user_id")[0].value = getCookie("fb_id");
 			document.getElementsByName("fb_name")[0].value = getCookie("fb_name")
-			getFoursquareLocations()
+		//	getFoursquareLocations()
+			getLocations()
 		});
 		$('[data-slider]').on('change', function(){
 			$('#expiration-label').text("Expires in... " + $('#expiration-slider').attr('data-slider') + " Hours");
