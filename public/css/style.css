@@ -116,20 +116,14 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 	padding-left:15px;
 }
 
-#phoneError {
+#phoneError, 
+#priceError, 
+#mealError, 
+#locationError {
 	color: red;
 	text-align: center;
 }
 
-#priceError {
-	color: red;
-	text-align: center;
-}
-
-#mealError {
-	color: red;
-	text-align: center;
-}
 /***************************
 ** Newsfeed **
 ****************************/

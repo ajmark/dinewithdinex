@@ -22,7 +22,7 @@ block content
 				div.small-12.columns
 					div.currency-input
 						input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
-						div(hidden, id="priceError") Please enter a price
+						div(hidden, id="priceError") Please enter a valid price
 				div.small-12.columns
 					div.contact-input
 						input(type="textfield",placeholder="Phone Number",name="contact_info")
@@ -40,6 +40,7 @@ block content
 							label Pick Location...
 								select(name="location")
 									option(value="",disabled selected) Select location
+							div(hidden, id="locationError") Please select a location
 				input(type="hidden", name="user_id")
 				input(type="hidden", name="fb_name")
 				input.button.radius(type="submit", value="Post My Offer", id="submit_new")
@@ -56,21 +57,42 @@ block content
 
 		function validateForm(){
 			var contact_info=document.forms["createForm"]["contact_info"].value;
-			var price = document.forms["createForm"]["price"].value; 
+			var price = document.forms["createForm"]["price"].value;
+			var location = document.forms["createForm"]["location"].value;
+			var stop_submit
 
+			//Checks the form inputs for values
 			if (!($('input[type=radio]:checked').size() > 0)){
 				$("#mealError").fadeIn();
-				return false;				
+				stop_submit = 1;	
+			} else {
+				$("#mealError").hide();
 			}
 
 			if (price==null || price==""){
 				$("#priceError").fadeIn();
-				return false; 
+				stop_submit = 1;
+			} else {
+				$("#priceError").hide();
 			}
 
 			if (contact_info==null || contact_info==""){
 				$("#phoneError").fadeIn(); 
-				return false;
+				stop_submit = 1;
+			} else {
+				$("#phoneError").hide();
+			}
+
+			if (location == null || location == ""){
+				$("#locationError").fadeIn(); 
+				stop_submit = 1;
+			} else {
+				$("#locationError").hide();
+			}
+
+			//If any errors detected, stops the form submission
+			if (stop_submit === 1){
+				return false
 			}
 
 
