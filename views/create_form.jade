@@ -41,6 +41,10 @@ block content
 								select(name="location")
 									option(value="",disabled selected) Select location
 							div(hidden, id="locationError") Please select a location
+					div.small-12.columns
+						div.notes-input
+							label Additional Notes
+								textarea(placeholder="i.e. I would like Vocelli's Pizza....", name="notes")
 				input(type="hidden", name="user_id")
 				input(type="hidden", name="fb_name")
 				input.button.radius(type="submit", value="Post My Offer", id="submit_new")

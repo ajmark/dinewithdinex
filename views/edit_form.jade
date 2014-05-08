@@ -48,6 +48,11 @@ block content
 							label Pick Location...
 								select(name="location")
 									option(value=location)=location
+					div.small-12.columns
+						div.notes-input
+							-var notes = offer.notes
+							label Additional Notes
+								textarea(placeholder="i.e. I would like Vocelli's Pizza....", name="notes")=offer.notes
 				input(type="hidden", name="user_id")
 				input(type="hidden", name="fb_name")
 				input.button.radius(type="submit", value="Update My Offer", id="submit_new")

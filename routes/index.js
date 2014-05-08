@@ -121,6 +121,7 @@ exports.create = function ( req, res ){
     accepted : false,
     completed : false,
     contact_info : req.body.contact_info,
+    notes : req.body.notes,
     buyer_id : null,
     buyer_name : null
   }).save( function( err, offer, count ){

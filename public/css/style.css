@@ -36,6 +36,10 @@ h3 {
 i {
 	color:gray;
 }
+
+textarea {
+	resize: vertical;
+}
 /***************************
 ** Splash Page **
 ****************************/
@@ -104,16 +108,12 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 	margin-top:40px;
 }
 
-.expiration-input {
+.expiration-input,
+.location-input,
+.notes-input {
 	margin-top:15px;
 	padding-left:15px;
 	padding-right:15px;
-}
-
-.location-input {
-	margin-top:15px;
-	padding-right:15px;
-	padding-left:15px;
 }
 
 #phoneError, 
@@ -187,7 +187,7 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 }
 
 .profile-pic {
-	border-radius:140px;
+	border-radius:160px;
 }
 
 /***************************
