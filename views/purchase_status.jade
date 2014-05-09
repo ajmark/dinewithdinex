@@ -4,7 +4,7 @@ extends layout
 block content
     div.row
         div.small-12.columns.profile-pic.page-title
-            img.profile-pic(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=120&height=120")
+            img.profile-pic(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=80&height=80")
             -if (!offer.completed) {
                 h2=offer.fb_name + " hasn't confirmed your purchase yet."
             -} else {
