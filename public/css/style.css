@@ -163,6 +163,12 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 .profile-thumbnail {
 	margin-top:25px;
 	border-radius:50px;
+	margin-left:35px;
+}
+
+.profile-name{
+	float:center;
+
 }
 
 /***************************
@@ -198,4 +204,17 @@ input[type="location"], input[type="expiration"], input[type="textfield"]{
 	margin:0 auto;
 	padding-top: 5px;
 }
+
+/***************************
+** 404 Error Page  **
+****************************/
+
+.error-title{
+	font-size:150%;
+}
+
+.error-option{
+	font-size:120%;
+}
+
 

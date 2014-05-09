@@ -4,4 +4,7 @@ extends layout
 block content
     div.row
         div.small-12.columns.page-title
-            h1="404 Error. The page does not exist!"
+            h1(class="error-title")="Oops! Something went wrong. The page you are looking for appears to be missing."
+            img.logo-error(src="/assets/logo_errorpage.png")
+            a(class="error-option" href="/newsfeed")="Go back to our Homepage"
+
