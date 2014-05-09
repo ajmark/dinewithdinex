@@ -7,7 +7,7 @@ block content
 		div.small-12.columns.page-title
 			h1 Share My Wealth
 	div.row 
-		form(method="post", action="/create")
+		form(method="post", action="/create" onsubmit="return validateForm()" name="createForm")
 			fieldset
 				legend Create a New Offer
 				div.row
@@ -18,27 +18,33 @@ block content
 							label(for="select_mealblock") Block
 							input(type="radio", name="meal_type",value="DineX", id="select_dinex")
 							label(for="select_dinex") DineX
-				div.small-6.columns
+						div(hidden, id = "mealError") Please select a meal type
+				div.small-12.columns
 					div.currency-input
 						input.currency(type="textfield",min="0.01",step="0.01",max="20",id="input_price",placeholder="$ Enter Price",name="price")
-				div.small-6.columns
+						div(hidden, id="priceError") Please enter a valid price
+				div.small-12.columns
 					div.contact-input
 						input(type="textfield",placeholder="Phone Number",name="contact_info")
+						div(hidden, id = "phoneError") Please enter a phone number
 				div.row
-					div.small-6.columns
+					div.small-12.columns
 						div.expiration-input
-							label Expires in...
-								select(name="expiration")
-									option(value="",disabled selected) Select hours
-									option(value="1") One Hour
-									option(value="2") Two Hours
-									option(value="3") Three Hours
-									option(value="4") Four Hours
-					div.small-6.columns
+							label(id="expiration-label") Time
+							div.range-slider.radius(data-slider, id="expiration-slider", data-options="end: 4;")
+								span.range-slider-handle
+								span.range-slider-active-segment
+								input(type="hidden", name="expiration")
+					div.small-12.columns
 						div.location-input
 							label Pick Location...
 								select(name="location")
 									option(value="",disabled selected) Select location
+							div(hidden, id="locationError") Please select a location
+					div.small-12.columns
+						div.notes-input
+							label Additional Notes
+								textarea(placeholder="i.e. I would like Vocelli's Pizza....", name="notes")
 				input(type="hidden", name="user_id")
 				input(type="hidden", name="fb_name")
 				input.button.radius(type="submit", value="Post My Offer", id="submit_new")
@@ -46,7 +52,52 @@ block content
 		$(document).ready(function(){
 			document.getElementsByName("user_id")[0].value = getCookie("fb_id");
 			document.getElementsByName("fb_name")[0].value = getCookie("fb_name")
-			getFoursquareLocations()
+		//	getFoursquareLocations()
+			getLocations()
+		});
+		$('[data-slider]').on('change', function(){
+			$('#expiration-label').text("Expires in... " + $('#expiration-slider').attr('data-slider') + " Hours");
 		});
 
+		function validateForm(){
+			var contact_info=document.forms["createForm"]["contact_info"].value;
+			var price = document.forms["createForm"]["price"].value;
+			var location = document.forms["createForm"]["location"].value;
+			var stop_submit
 
+			//Checks the form inputs for values
+			if (!($('input[type=radio]:checked').size() > 0)){
+				$("#mealError").fadeIn();
+				stop_submit = 1;	
+			} else {
+				$("#mealError").hide();
+			}
+
+			if (price==null || price==""){
+				$("#priceError").fadeIn();
+				stop_submit = 1;
+			} else {
+				$("#priceError").hide();
+			}
+
+			if (contact_info==null || contact_info==""){
+				$("#phoneError").fadeIn(); 
+				stop_submit = 1;
+			} else {
+				$("#phoneError").hide();
+			}
+
+			if (location == null || location == ""){
+				$("#locationError").fadeIn(); 
+				stop_submit = 1;
+			} else {
+				$("#locationError").hide();
+			}
+
+			//If any errors detected, stops the form submission
+			if (stop_submit === 1){
+				return false
+			}
+
+
+		};

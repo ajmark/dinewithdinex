@@ -15,17 +15,20 @@ block content
 				div.offer.newsfeed.row
 					a(href="/offer/" + offer._id)
 						div.small-12
-							img.profile-thumbnail(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=50&height=50")
-
 							div.small-8.columns.offer-info
 								div.small-12
 									h4="$"+offer.fixedPrice()
-										span.sell_type=offer.type
+										if (offer.type == "Block")
+											span.sell_type.sell_block=offer.type
+										else
+											span.sell_type=offer.type
 									
 									h4=" @ " + offer.location
 									h6=offer.formatDate() + " | " + offer.formatTime()
-							h6(class="profile-name")
-								i=offer.fb_name
+							div.small-4.columns.profile
+								img.profile-thumbnail(src="http://graph.facebook.com/"+offer.user_id+"/picture?width=50&height=50")
+								h6(class="profile-name")
+									i=offer.fb_name
 		-	}
 		- }
 			

@@ -8,7 +8,7 @@ block content
             -if (!offer.completed) {
                 h2=offer.fb_name + " hasn't confirmed your purchase yet."
             -} else {
-                h2=offer.user_id + " completed your transaction!"
+                h2=offer.fb_name + " completed your transaction!"
             -}
     div.row
         div.small-12
@@ -16,7 +16,7 @@ block content
                 div.button-bar.status-buttons
                     ul.button-group 
                         li.status-action
-                            a.button.radius.small.secondary(href="/dashboard/" + offer.user_id)="Go Back"
+                            a.button.radius.small.secondary(href="/dashboard/" + offer.buyer_id)="Go Back"
                         li.status-action
                             a.button.small.radius.alert(onclick="rejectOffer()")= "Cancel"
            

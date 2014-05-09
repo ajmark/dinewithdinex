@@ -15,6 +15,7 @@ var Offer = new Schema({
     accepted : Boolean,
     completed : Boolean,
     contact_info : {type: String, required:true},
+    notes : {type:String},
     buyer_id : {type:String},
     buyer_name : {type:String}
 });
