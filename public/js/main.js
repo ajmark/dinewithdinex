@@ -150,14 +150,14 @@ function getLocations() {
 locs = ["Resnik House", "Carnegie Mellon Cafe",  "Nakama Express", "Spice It Up Grill", "Stackers",
         "Take Comfort", "Tartans Pavilion", "Taste of India", "Worlds of Flavor",
         
-        "Newell-Simon Hall", "Asiana", "Mitchell's Mainstreet Marketplace",
+        "Newell-Simon Hall", "Asiana", "Mitchell&#39;s Mainstreet Marketplace",
         
         "University Center", "City Grill", "Creperie", "Downtown Deli", "El Gallo de Oro",
         "Entropy", "eVgefstos", "Pasta Villagio", "The Pomegranate", "Schatz Dining Room", "Skibo Cafe",
         "Spinning Salads",
         
         "Other", "The Exchange", "Gingers Express", "Heinz Cafe", "La Prima Espresso", "The Maggie Murph Cafe",  
-        "Tazza d' Oro", "The Underground", "The Zebra Lounge"
+        "Tazza d&#39; Oro", "The Underground", "The Zebra Lounge"
   ]
 
 
